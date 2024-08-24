@@ -35,6 +35,7 @@ public class UserRepository(ChatDbContext context) : IUserRepository
         throw new NotImplementedException();
     }
 
+    
     public async Task DeleteUser(User user)
     {
         throw new NotImplementedException();
