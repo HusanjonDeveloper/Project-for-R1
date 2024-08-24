@@ -17,7 +17,7 @@ public class User
     public  string UserName  { get; set; }
     
     [Required]
-    public string OAsswordHash  { get; set; }
+    public string PasswordHash  { get; set; }
     
     [Required] 
     public  string Gender  { get; set; }
