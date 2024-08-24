@@ -1,4 +1,6 @@
 
+using Chat.Api.Context;
+
 namespace Chat.Api
 {
     public class Program
@@ -13,6 +15,7 @@ namespace Chat.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<ChatDbContext>();
 
             var app = builder.Build();
 
