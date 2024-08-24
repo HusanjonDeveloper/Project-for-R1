@@ -1,3 +1,4 @@
+
 using Microsoft.EntityFrameworkCore;
 
 namespace Chat.Api.Context;
@@ -16,5 +17,10 @@ public class ChatDbContext : DbContext
     }
     
     public  DbSet<Entities.User> Users { get; set; }
+    
     public DbSet<Entities.Chat> Chats { get; set; }
+
+    public  DbSet<Entities.UserChat> UserChats { get; set; }
+
+    public  DbSet<Entities.Message> Messages { get; set; }
 }
