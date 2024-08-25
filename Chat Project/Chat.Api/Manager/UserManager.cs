@@ -10,20 +10,20 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Chat.Api.Manager;
 
-public class UserManager(IUserRepository userRepository)
+public class UserManager(IUnitOfWork unitOfWork)
 {
-     private readonly IUserRepository _userRepository = userRepository;
+    private readonly IUnitOfWork  _unitOfWork = unitOfWork;
 
      public async Task<List<UserDto >> GetAllUsers()
      {
-         var users = await _userRepository.GetAllUsers();
+         var users = await _unitOfWork.UserRepository.GetAllUsers();
 
          return users.ParsToDto();
      }
 
      public async Task<UserDto> GetUserById(Guid userId)
      {
-         var user = await _userRepository.GetUserById(userId);
+         var user = await _unitOfWork.UserRepository.GetUserById(userId);
          return user.ParsToDto();
      }
 
@@ -45,13 +45,13 @@ public class UserManager(IUserRepository userRepository)
 
          user.PasswordHash = passwordHash;
 
-         await _userRepository.AddUser(user);
+         await _unitOfWork.UserRepository.AddUser(user);
          return user.ParsToDto();
      }
 
      public async Task<string> Login(LoginModel model)
      {
-         var user = await _userRepository.GetUserByUsername(model.UserName);
+         var user = await _unitOfWork.UserRepository.GetUserByUsername(model.UserName);
 
          if (user is null)
              throw new Exception("UserName is invalid");
@@ -66,10 +66,10 @@ public class UserManager(IUserRepository userRepository)
          return "Login successfully";
 
      }
-
+ 
      private async Task CheckForExist(string username)
      {
-         var user = await _userRepository.GetUserByUsername(username);
+         var user = await _unitOfWork.UserRepository.GetUserByUsername(username);
        
          if (user is null)
              throw new UserExsitException();
