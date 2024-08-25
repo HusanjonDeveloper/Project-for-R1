@@ -47,7 +47,23 @@ public class UserManager(IUserRepository userRepository)
 
          await _userRepository.AddUser(user);
          return user.ParsToDto();
+     }
 
+     public async Task<string> Login(LoginModel model)
+     {
+         var user = await _userRepository.GetUserByUsername(model.UserName);
+
+         if (user is null)
+             throw new Exception("UserName is invalid");
+
+         var result =
+             new PasswordHasher<User>()
+                 .VerifyHashedPassword(user, user.PasswordHash, model.Password);
+
+         if (result == PasswordVerificationResult.Failed)
+             throw new Exception("Invalid password");
+
+         return "Login successfully";
 
      }
 
