@@ -1,5 +1,6 @@
 using Chat.Api.Context;
 using Chat.Api.Entities;
+using Chat.Api.Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Chat.Api.Repositories;
@@ -16,28 +17,36 @@ public class UserRepository(ChatDbContext context) : IUserRepository
 
     public async Task<User> GetUserById(Guid id)
     {
-        var users = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
-        return users;
+        var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
+        if (user is null)
+            throw new UserNotFoundException();
+       
+        return user;
     }
 
-    public async Task<User>? GetUserByUsername(string username)
+    public async Task<User?> GetUserByUsername(string username)
     {
-        throw new NotImplementedException();
+        var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == username);
+        return user;
+
     }
 
     public async Task AddUser(User user)
     {
-        throw new NotImplementedException();
+        _context.Users.Add(user);
+        await _context.SaveChangesAsync();
     }
 
     public async Task UpdateUser(User user)
     {
-        throw new NotImplementedException();
+        _context.Users.Update(user);
+        await _context.SaveChangesAsync();
     }
 
     
     public async Task DeleteUser(User user)
     {
-        throw new NotImplementedException();
+        _context.Users.Remove(user);
+        await _context.SaveChangesAsync();
     }
 }
