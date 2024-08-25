@@ -1,5 +1,7 @@
 
 using Chat.Api.Context;
+using Chat.Api.Manager;
+using Chat.Api.Repositories;
 
 namespace Chat.Api
 {
@@ -15,8 +17,13 @@ namespace Chat.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IChatRepositoriy, ChatRepositoriy>();
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<UserManager>();
+            
             builder.Services.AddDbContext<ChatDbContext>();
-
+ 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
