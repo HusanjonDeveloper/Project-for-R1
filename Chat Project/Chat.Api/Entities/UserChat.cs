@@ -4,7 +4,7 @@ public class UserChat
 {
     public  Guid Id { get; set; }
     
-    public  Guid UserChatId { get; set; } // nuni qilishdan maqsad one-tomeny
+    public  Guid UserId { get; set; } // nuni qilishdan maqsad one-tomeny
     
     public  User? User { get; set; }
 
