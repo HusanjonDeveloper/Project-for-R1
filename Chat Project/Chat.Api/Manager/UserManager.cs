@@ -6,6 +6,7 @@ using Chat.Api.Exceptions;
 using Chat.Api.Extensions;
 using Chat.Api.Model.UserModels;
 using Chat.Api.Repositories;
+using Microsoft.AspNetCore.Identity;
 
 namespace Chat.Api.Manager;
 
@@ -37,8 +38,17 @@ public class UserManager(IUserRepository userRepository)
              UserName = model.UserName,
              Gender = GetGender(model.Gender)
          };
-         
-         
+
+         var passwordHash =
+             new PasswordHasher<User>()
+                 .HashPassword(user, model.Password);
+
+         user.PasswordHash = passwordHash;
+
+         await _userRepository.AddUser(user);
+         return user.ParsToDto();
+
+
      }
 
      private async Task CheckForExist(string username)
