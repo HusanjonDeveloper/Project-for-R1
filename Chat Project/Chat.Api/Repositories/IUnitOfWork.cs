@@ -2,7 +2,7 @@ namespace Chat.Api.Repositories;
 
 public interface IUnitOfWork
 {
-    IUserRepository UserRepository { get; set; }
+    IUserRepository UserRepository { get;}
 
     IChatRepositoriy ChatRepositoriy { get; }
 }
