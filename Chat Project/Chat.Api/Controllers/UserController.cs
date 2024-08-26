@@ -1,6 +1,7 @@
 
 using Chat.Api.Exceptions;
 using Chat.Api.Manager;
+using Chat.Api.Model.UserModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chat.Api.Controllers
@@ -29,8 +30,24 @@ namespace Chat.Api.Controllers
             }
             catch (UserNotFoundException e)
             {
+                return NotFound();
+            }
+            catch(Exception e)
+            {
                 return BadRequest(e.Message);
             }
         }
+        
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody]CreateUserModel model)
+        {
+            var result = await _userManager.Register(model);
+            return Ok(result);
+        }
+        
+        
+        
+        
     }
 }
