@@ -2,6 +2,7 @@
 using Chat.Api.Context;
 using Chat.Api.Manager;
 using Chat.Api.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace Chat.Api
 {
@@ -22,7 +23,10 @@ namespace Chat.Api
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<UserManager>();
             
-            builder.Services.AddDbContext<ChatDbContext>();
+            builder.Services.AddDbContext<ChatDbContext>(options =>
+            {
+                options.UseNpgsql(builder.Configuration.GetSection("ChatDb").Value); 
+            });
  
             var app = builder.Build();
 
