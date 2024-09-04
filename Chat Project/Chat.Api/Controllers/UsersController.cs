@@ -8,7 +8,7 @@ namespace Chat.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController(UserManager userManager) : ControllerBase
+    public class UsersController(UserManager userManager) : ControllerBase
     {
         private readonly UserManager _userManager = userManager;
 

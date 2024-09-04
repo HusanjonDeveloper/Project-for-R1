@@ -25,8 +25,8 @@ namespace Chat.Api
             
             builder.Services.AddDbContext<ChatDbContext>(options =>
             {
-                options.UseNpgsql(builder.Configuration.GetSection("ChatDb").Value); 
-            });
+                options.UseNpgsql(builder.Configuration.GetConnectionString("ChatDb")); 
+            }); 
  
             var app = builder.Build();
 
