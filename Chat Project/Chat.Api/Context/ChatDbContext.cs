@@ -2,13 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 namespace Chat.Api.Context;
 
-public class ChatDbContext: DbContext
+public class ChatDbContext(DbContextOptions<ChatDbContext> options) : DbContext(options)
 {
-    public ChatDbContext(DbContextOptions<ChatDbContext> options) : base(options)
-    {
-
-    }
-
     public  DbSet<Entities.User> Users { get; set; }
     
     public DbSet<Entities.Chat> Chats { get; set; }
