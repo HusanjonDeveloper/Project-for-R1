@@ -54,6 +54,5 @@ namespace Chat.Api.Controllers
             return Ok(result);
         }
         
-        
     }
 }
