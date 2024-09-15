@@ -10,4 +10,5 @@ public class LoginModel
     
     [Required]
     public string Password { get; set; }
+
 }
