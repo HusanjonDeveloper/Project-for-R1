@@ -3,7 +3,7 @@ namespace Chat.Api.Repositories;
 public interface IChatRepositoriy
 {
     Task<List<Entities.Chat>> GetAllChats();
-    Task<Entities.Chat> GetAllUserChats(Guid userId);
+    Task<List<Entities.Chat>> GetAllUserChats(Guid userId);
     Task<Entities.Chat> GetUserChatById(Guid userId,Guid chatId);
     Task<bool> CheckChatExist(Guid fromUserId, Guid toUserId);
     Task AddOrEnterChat(Entities.Chat chat);

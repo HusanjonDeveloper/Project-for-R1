@@ -8,7 +8,7 @@ public class Message
 
     public  string? Text { get; set; }
 
-    public   Guid FromUsrId  { get; set; }
+    public Guid FromUsrId  { get; set; }
     
     [Required]
     public  string FromUserName  { get; set; }

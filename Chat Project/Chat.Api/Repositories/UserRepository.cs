@@ -18,6 +18,7 @@ public class UserRepository(ChatDbContext context) : IUserRepository
     public async Task<User> GetUserById(Guid id)
     {
         var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
+       
         if (user is null)
             throw new UserNotFoundException();
        

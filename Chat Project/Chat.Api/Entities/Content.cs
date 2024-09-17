@@ -5,7 +5,7 @@ namespace Chat.Api.Entities;
 public class Content
 {
     public  int Id { get; set; }
-
+ 
     public  string? Caption { get; set; }
     
     [Required]
@@ -14,4 +14,5 @@ public class Content
     public  string? Type { get; set; }
 
     public int MessageId { get; set; }
+    
 }
