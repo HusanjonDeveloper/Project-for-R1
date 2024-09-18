@@ -4,6 +4,6 @@ public static class UserConstants
 {
     public const string Male = "male";
     
-    public const string Famale = "famale";
+    public const string Female = "female";
 
 }
