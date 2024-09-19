@@ -10,19 +10,19 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Chat.Api.Manager;
 
-public class UserManager(IUserRepository userRepository)
+public class UserManager( IUnitOfWork unitOfWork)
 {
-    private readonly IUserRepository _userRepository = userRepository;
+    private readonly IUnitOfWork _unitOfWork = unitOfWork;
     protected async Task<List<UserDto>> GetAllUsers(CreateUserModel mocel)
     {
-        var users = await _userRepository.GetAllUsers();
+        var users = await _unitOfWork.UserRepository.GetAllUsers();
 
         return users.ParseToDtos();
     }
 
     public async Task<UserDto> GetUsrById(Guid userId)
     {
-        var user = await _userRepository.GetUserById(userId);
+        var user = await _unitOfWork.UserRepository.GetUserById(userId);
         return user.ParseToDto();
     }
 
@@ -43,16 +43,32 @@ public class UserManager(IUserRepository userRepository)
                            
          user.PasswordHash = passwordHash;
 
-         await _userRepository.AddUser(user);
+         await _unitOfWork.UserRepository.AddUser(user);
          return user.ParseToDto();
     }
     
     private async Task CheckForrExist(string username)
     {
-         var user  =  await _userRepository.GetUserByUsername(username);
+         var user  =  await _unitOfWork.UserRepository.GetUserByUsername(username);
 
          if (user is null)
              throw new UserExsitException();
+    }
+
+    public async Task<string> Login(LoginModel model)
+    {
+        var user = await _unitOfWork.UserRepository.GetUserByUsername(model.UserName);
+       
+        if(user is null)
+            throw new Exception("Invalid username");
+
+        var result = new PasswordHasher<User>().
+            VerifyHashedPassword(user, user.PasswordHash, model.Password);
+
+        if (result == PasswordVerificationResult.Failed)
+            throw new Exception("Invalid  password");
+
+        return "Login Successful";
     }
 
     private string GetGender(string gender)
@@ -62,6 +78,6 @@ public class UserManager(IUserRepository userRepository)
         
         return checkForGenderExist ? gender : UserConstants.Male;
     }
-
-
+    
+    
 }     
