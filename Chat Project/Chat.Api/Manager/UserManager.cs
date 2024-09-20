@@ -13,7 +13,8 @@ namespace Chat.Api.Manager;
 public class UserManager( IUnitOfWork unitOfWork)
 {
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
-    protected async Task<List<UserDto>> GetAllUsers()
+
+    public async Task<List<UserDto>> GetAllUsers()
     {
         var users = await _unitOfWork.UserRepository.GetAllUsers();
 

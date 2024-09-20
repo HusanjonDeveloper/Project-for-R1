@@ -47,8 +47,15 @@ namespace Chat.Api.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
-            var result = await _userManager.Login(model);
-            return Ok(result);
+            try
+            {
+                var result = await _userManager.Login(model);
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
         
         

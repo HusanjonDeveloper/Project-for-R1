@@ -21,6 +21,9 @@ public class ChatRepositoriy(ChatDbContext context) : IChatRepositoriy
                 Where(x => x.UserId == userId).ToListAsync();
 
         List<Entities.Chat> sortedChats = new();
+        var check = userChats == null || userChats.Count == 0;
+        if (check)
+            return sortedChats;
 
         foreach (var chat in userChats)
         {
