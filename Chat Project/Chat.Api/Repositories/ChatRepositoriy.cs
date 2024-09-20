@@ -1,4 +1,5 @@
 using Chat.Api.Context;
+using Chat.Api.Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Chat.Api.Repositories;
@@ -14,7 +15,7 @@ public class ChatRepositoriy(ChatDbContext context) : IChatRepositoriy
         return chats;
     }
 
-    public async Task<List<Entities.Chat>> GetAllUserChats(Guid userId)
+    public async Task<List<Entities.Chat>> GetAllUserChats(Guid userId) // Barcha Chatlar uchun 
     {
         var userChats =
             await _context.UserChats.
@@ -34,14 +35,27 @@ public class ChatRepositoriy(ChatDbContext context) : IChatRepositoriy
         return sortedChats;
     }
 
-    public Task<Entities.Chat> GetUserChatById(Guid userId, Guid chatId)
+    public async Task<Entities.Chat> GetUserChatById(Guid userId, Guid chatId) // Bitta chat uchun 
     {
-        throw new NotImplementedException();
+       var userChat = await _context.UserChats.
+           SingleOrDefaultAsync(x => x.UserId == userId && 
+                      x.ChatId == chatId);
+
+       if (userChat is null)
+           throw new  ChatNotFoundException();
+       
+       var chat = await 
+           _context.Chats.SingleAsync(x => x.Id == chatId);
+       return chat;
+
     }
 
-    public Task<bool> CheckChatExist(Guid fromUserId, Guid toUserId)
+    public async Task<bool> CheckChatExist(Guid fromUserId, Guid toUserId) // bor yoki yoqligini bilish uchun 
     {
-        throw new NotImplementedException();
+        var userChat = await _context.UserChats
+            .SingleOrDefaultAsync(x => x.UserId == fromUserId 
+                                       || x.UserId == toUserId);
+        return userChat != null;
     }
 
     public Task AddOrEnterChat(Entities.Chat chat)
