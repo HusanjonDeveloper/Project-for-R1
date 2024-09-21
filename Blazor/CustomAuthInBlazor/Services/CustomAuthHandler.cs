@@ -42,14 +42,12 @@ public class CustomAuthHandler(ILocalStorageService localStorageService) : Authe
 
     public async Task<Tuple<string?,string?,string?>> ReadJwtToken()
     {
-        var token = await _localStorageService.GetItemAsStringAsync("token");
+        var token = await _localStorageService.GetItemAsync<string>("token");
 
         if (string.IsNullOrEmpty(token))
         {
             return new(null,null,null);
         }
-
-        token = " ";
         
         var security = new JwtSecurityTokenHandler();
         var parsedToken = security.ReadJwtToken(token);

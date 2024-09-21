@@ -1,9 +1,29 @@
 ﻿@page "/"
-
+@using Blazored.LocalStorage
+@inject  ILocalStorageService StorageService
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
+<h3>Result @resul</h3>
 
+<h5>token from storage : @tokentFromStorage</h5>
+<br/>
+<br/>
+<h5>token : @staticTokent</h5>
+
+@code
+{
+    bool resul => staticTokent == tokentFromStorage;
+    
+    string tokentFromStorage { get; set; }
+    string staticTokent = " ";
+    
+    protected override async Task OnInitializedAsync()
+    {
+        tokentFromStorage = await StorageService.GetItemAsync<string>("token")!;
+    }
+
+}
