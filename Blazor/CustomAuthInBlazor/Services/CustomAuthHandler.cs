@@ -1,11 +1,15 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
+using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Authorization;
 
 namespace CustomAuthInBlazor.Services;
 
-public class CustomAuthHandler : AuthenticationStateProvider
+public class CustomAuthHandler(ILocalStorageService localStorageService) : AuthenticationStateProvider
 {
+    private readonly ILocalStorageService _localStorageService = localStorageService;
+
     public override async Task<AuthenticationState> GetAuthenticationStateAsync()
     {
         var (userId, username, role) = await ReadJwtToken();
@@ -19,8 +23,11 @@ public class CustomAuthHandler : AuthenticationStateProvider
             user:claimsPrincipal));
     }
 
-    public async Task<ClaimsPrincipal> SetClaims(string userId, string username, string role)
+    public async Task<ClaimsPrincipal> SetClaims(string? userId, string? username, string? role)
     {
+        if(userId == null || username == null || role == null)
+            return new ClaimsPrincipal();
+        
         var claimsPrincipal = new ClaimsPrincipal(
             new ClaimsIdentity(
                 new List<Claim>()
@@ -33,10 +40,17 @@ public class CustomAuthHandler : AuthenticationStateProvider
         return claimsPrincipal;
     }
 
-    public async Task<Tuple<string,string,string>> ReadJwtToken()
+    public async Task<Tuple<string?,string?,string?>> ReadJwtToken()
     {
-        var token = " ";
+        var token = await _localStorageService.GetItemAsStringAsync("token");
 
+        if (string.IsNullOrEmpty(token))
+        {
+            return new(null,null,null);
+        }
+
+        token = " ";
+        
         var security = new JwtSecurityTokenHandler();
         var parsedToken = security.ReadJwtToken(token);
         
