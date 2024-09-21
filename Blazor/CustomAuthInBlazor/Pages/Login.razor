@@ -1,1 +1,19 @@
+@using Blazored.LocalStorage
 <h1>it is login page</h1>
+@inject ILocalStorageService StorageService
+@inject  NavigationManager Manager
+<label>Tokenni kiriting</label>
+<input/>
+<button type="submit"@onclick="SetToken"></button>
+
+
+@code
+{
+    string token { get; set; }
+
+    private async Task SetToken()
+    {
+        await StorageService.SetItemAsync("token", token);
+        Manager.NavigateTo("/Weather");
+    }
+}
