@@ -8,7 +8,9 @@ public class CustomAuthHandler : AuthenticationStateProvider
 {
     public override async Task<AuthenticationState> GetAuthenticationStateAsync()
     {
-        var claimsPrincipal = await SetClaims();
+        var (userId, username, role) = await ReadJwtToken();
+        
+        var claimsPrincipal = await SetClaims(userId, username, role);
         
         NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(
             user:claimsPrincipal)));
