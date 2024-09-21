@@ -50,12 +50,19 @@ public class ChatRepositoriy(ChatDbContext context) : IChatRepositoriy
 
     }
 
-    public async Task<bool> CheckChatExist(Guid fromUserId, Guid toUserId) // bor yoki yoqligini bilish uchun 
+    public async Task<Tuple<bool, Entities.Chat?>> CheckChatExist(Guid fromUserId, Guid toUserId) // bor yoki yoqligini bilish uchun 
     {
         var userChat = await _context.UserChats
             .SingleOrDefaultAsync(x => x.UserId == fromUserId 
                                        || x.UserId == toUserId);
-        return userChat != null;
+        if (userChat is null)
+        {
+            var chat = await GetUserChatById(userChat.UserId, userChat.ChatId);
+            return new (true, chat);
+        }
+
+        return new(false, null);
+
     }
 
     public async Task AddUserChat (Entities.Chat chat)
