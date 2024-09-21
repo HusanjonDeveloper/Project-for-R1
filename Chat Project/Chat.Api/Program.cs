@@ -23,7 +23,8 @@ namespace Chat.Api
             builder.Services.AddScoped<IChatRepositoriy, ChatRepositoriy>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<UserManager>();
-            
+            builder.Services.AddScoped<IUserChatRepository, UserChatRepository>();
+             
             builder.Services.AddDbContext<ChatDbContext>(options =>
             {
                 options.UseNpgsql(builder.Configuration.GetConnectionString("ChatDb")); 

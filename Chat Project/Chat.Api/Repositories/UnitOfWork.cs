@@ -14,6 +14,9 @@ public class UnitOfWork(ChatDbContext context) : IUnitOfWork
      
     public IChatRepositoriy ChatRepositoriy =>
          _chatRepositoriy ?? new ChatRepositoriy(context);
+    
+    private IUserChatRepository? _userChatRepository { get;}
 
-   
+    public IUserChatRepository UserChatRepository =>
+    _userChatRepository ?? new UserChatRepository(context);
 }
