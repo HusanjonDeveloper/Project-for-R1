@@ -58,18 +58,25 @@ public class ChatRepositoriy(ChatDbContext context) : IChatRepositoriy
         return userChat != null;
     }
 
-    public Task AddOrEnterChat(Entities.Chat chat)
+    public async Task AddUserChat (Entities.Chat chat)
     {
-        throw new NotImplementedException();
+     // await  _context.AddAsync(chat); 
+     
+     await _context.Chats.AddAsync(chat);   
+     
+     await _context.SaveChangesAsync(); 
+     
+    } 
+
+    public async Task UpdateChat(Entities.Chat chat)
+    {
+        _context.Chats.Update(chat);
+        await _context.SaveChangesAsync();
     }
 
-    public Task UpdateChat(Entities.Chat chat)
+    public async Task DeleteChat(Entities.Chat chat)
     {
-        throw new NotImplementedException();
-    }
-
-    public Task DeleteChat(Entities.Chat chat)
-    {
-        throw new NotImplementedException();
+        _context.Chats.Remove(chat);
+        await _context.SaveChangesAsync();
     }
 }
