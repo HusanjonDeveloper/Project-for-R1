@@ -65,7 +65,7 @@ public class ChatRepositoriy(ChatDbContext context) : IChatRepositoriy
 
     }
 
-    public async Task AddUserChat (Entities.Chat chat)
+    public async Task AddChat (Entities.Chat chat)
     {
      // await  _context.AddAsync(chat); 
      
