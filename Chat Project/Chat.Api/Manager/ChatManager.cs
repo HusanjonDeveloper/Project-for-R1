@@ -42,7 +42,7 @@ public class ChatManager(IUnitOfWork unitOfWork)
                await _unitOfWork.ChatRepositoriy.CheckChatExist(fromUserId, toUserId);
 
           if (check)
-               chat?.ParseToDto();
+             return  chat?.ParseToDto()!;
           
           var fromUser = await _unitOfWork.UserRepository.GetUserById(fromUserId);
           var  toUser = await _unitOfWork.UserRepository.GetUserById(toUserId);
