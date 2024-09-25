@@ -18,4 +18,12 @@ public class ChatsController(ChatManager chatManager) : Controller
         var chats = await _chatManager.GetAllUserChats(userId);
         return Ok(chats);
     }
+
+    [HttpPost]
+
+    public async Task<IActionResult> AddOrEnterChat(Guid userId,[FromBody] Guid toUserId)
+    {
+        var chat = await _chatManager.AddOrEnterChat(userId, toUserId);
+        return Ok(chat);
+    }
 }
