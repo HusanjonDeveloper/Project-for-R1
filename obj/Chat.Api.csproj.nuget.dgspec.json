@@ -37,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net9.0": {
@@ -51,6 +50,10 @@
             "Mapster.Core": {
               "target": "Package",
               "version": "[1.2.2-pre01, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[9.0.0-rc.1.24452.1, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
