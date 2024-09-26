@@ -260,3 +260,5 @@
 /Users/macbook/Desktop/Projects/Project-for-R1/Chat Project/Chat.Api/obj/Debug/net9.0/Chat.Api.pdb
 /Users/macbook/Desktop/Projects/Project-for-R1/Chat Project/Chat.Api/obj/Debug/net9.0/Chat.Api.genruntimeconfig.cache
 /Users/macbook/Desktop/Projects/Project-for-R1/Chat Project/Chat.Api/obj/Debug/net9.0/ref/Chat.Api.dll
+/Users/macbook/Desktop/Projects/Project-for-R1/Chat Project/Chat.Api/bin/Debug/net9.0/Microsoft.AspNetCore.Components.WebAssembly.dll
+/Users/macbook/Desktop/Projects/Project-for-R1/Chat Project/Chat.Api/bin/Debug/net9.0/Microsoft.JSInterop.WebAssembly.dll
