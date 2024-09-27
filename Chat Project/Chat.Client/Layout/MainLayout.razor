@@ -27,25 +27,24 @@
 
 
 @code{
-bool isAuthorized { get; set; } = false;
+    bool isAuthorized { get; set; } = false;
 
-private async Task LogOut()
-{
-await StorageService.DeleteToken();
+    private async Task LogOut()
+    {
+        await StorageService.DeleteToken();
 
-NavigationManager.Refresh(true);
-}
+        NavigationManager.Refresh(true);
+    }
 
 
-protected override async Task OnInitializedAsync()
-{
+    protected override async Task OnInitializedAsync()
+    {
 
-var stateProvider = (CustomAuthHandler)StateProvider;
+        var stateProvider = (CustomAuthHandler)StateProvider;
 
-var state = await stateProvider.GetAuthenticationStateAsync();
+        var state = await stateProvider.GetAuthenticationStateAsync();
 
-var user = state.User;
-
-}
+        var user = state.User;
+    }
 
 }

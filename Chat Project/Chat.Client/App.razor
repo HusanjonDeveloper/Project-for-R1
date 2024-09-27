@@ -15,8 +15,7 @@
                 </Authorizing>
                 <NotAuthorized>
                     @{
-
-                    NavigationManager.NavigateTo($"/account/login");
+                        NavigationManager.NavigateTo($"/account/login");
                     }
                 </NotAuthorized>
             </AuthorizeRouteView>
@@ -45,16 +44,15 @@ protected override async Task OnInitializedAsync()
 
 private async Task CheckUserLogin()
 {
-var stateProvider = (CustomAuthHandler)StateProvider;
+    var stateProvider = (CustomAuthHandler)StateProvider;
 
-var state = await stateProvider.GetAuthenticationStateAsync();
+    var state = await stateProvider.GetAuthenticationStateAsync();
 
-var user = state.User;
+    var user = state.User;
 
-var userId = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)!.Value;
+    var userId = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)!.Value;
 
-if (string.IsNullOrEmpty(userId))
-NavigationManager.NavigateTo("/account/login");
-}
-
+    if (string.IsNullOrEmpty(userId))
+        NavigationManager.NavigateTo("/account/login");
+    
 }

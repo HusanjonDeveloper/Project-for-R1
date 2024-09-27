@@ -1,4 +1,6 @@
 using System.Net;
+using Chat.Client.Models;
+using Chat.Client.Repositories.Contracts;
 using Microsoft.AspNetCore.Components;
 
 public class LoginBase : ComponentBase
@@ -11,8 +13,7 @@ public class LoginBase : ComponentBase
 
     [Inject]
     ILocalStorageService StorageService { get; set; }
-
-
+    
     protected LoginModel Model = new();
 
     protected async Task LoginClicked()
