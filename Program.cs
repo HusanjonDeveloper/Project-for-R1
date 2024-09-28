@@ -1,5 +1,6 @@
 
 using Chat.Api.Context;
+using Chat.Api.Hubs;
 using Chat.Api.Manager;
 using Chat.Api.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +26,8 @@ namespace Chat.Api
             builder.Services.AddScoped<UserManager>();
             builder.Services.AddScoped<ChatManager>();
             builder.Services.AddScoped<IUserChatRepository, UserChatRepository>();
-             
+            builder.Services.AddSignalR();
+            
             builder.Services.AddDbContext<ChatDbContext>(options =>
             {
                 options.UseNpgsql(builder.Configuration.GetConnectionString("ChatDb")); 
@@ -41,7 +43,10 @@ namespace Chat.Api
             }
             
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
             app.UseAuthorization();
+            app.MapHub<ChatHub>("chat-hub");
             app.MapControllers();
             app.Run();
         }
