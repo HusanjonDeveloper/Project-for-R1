@@ -1,3 +1,5 @@
+using Blazored.LocalStorage;
+
 namespace Chat.Client.Services;
 
 public class StorageService(ILocalStorageService localStorageService)

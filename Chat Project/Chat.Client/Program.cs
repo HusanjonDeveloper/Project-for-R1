@@ -1,4 +1,5 @@
-﻿using Chat.Client;
+﻿using Blazored.LocalStorage;
+using Chat.Client;
 using Chat.Client.Repositories;
 using Chat.Client.Repositories.Contracts;
 using Chat.Client.Services;

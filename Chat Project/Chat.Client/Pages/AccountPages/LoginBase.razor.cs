@@ -1,19 +1,17 @@
 using System.Net;
+using Blazored.LocalStorage;
 using Chat.Client.Models;
 using Chat.Client.Repositories.Contracts;
 using Microsoft.AspNetCore.Components;
 
 public class LoginBase : ComponentBase
 {
-    [Inject]
-    IUserIntegration UserIntegration { get; set; }
+    [Inject] IUserIntegration UserIntegration { get; set; }
 
-    [Inject]
-    NavigationManager Manager { get; set; }
+    [Inject] NavigationManager Manager { get; set; }
 
-    [Inject]
-    ILocalStorageService StorageService { get; set; }
-    
+    [Inject] ILocalStorageService StorageService { get; set; }
+
     protected LoginModel Model = new();
 
     protected async Task LoginClicked()
@@ -38,3 +36,4 @@ public class LoginBase : ComponentBase
 
 
     }
+}

@@ -3,6 +3,7 @@
 @using Chat.Client.Services
 @using Microsoft.AspNetCore.Components.Authorization
 @inject AuthenticationStateProvider StateProvider
+@inject NavigationManager Navigation
 
 
 <CascadingAuthenticationState>
@@ -15,7 +16,7 @@
                 </Authorizing>
                 <NotAuthorized>
                     @{
-                        NavigationManager.NavigateTo($"/account/login");
+                        NavigationManager.NavigateTo("/account/login");
                     }
                 </NotAuthorized>
             </AuthorizeRouteView>
@@ -34,25 +35,26 @@
 
 @code
 {
-bool isAuthorized = false;
+    bool isAuthorized = false;
 
-protected override async Task OnInitializedAsync()
-{
+    protected override async Task OnInitializedAsync()
+    {
 
-}
+    }
 
 
-private async Task CheckUserLogin()
-{
-    var stateProvider = (CustomAuthHandler)StateProvider;
+    private async Task CheckUserLogin()
+    {
+        var stateProvider = (CustomAuthHandler)StateProvider;
 
-    var state = await stateProvider.GetAuthenticationStateAsync();
+        var state = await stateProvider.GetAuthenticationStateAsync();
 
-    var user = state.User;
+        var user = state.User;
 
-    var userId = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)!.Value;
+        var userId = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)!.Value;
 
-    if (string.IsNullOrEmpty(userId))
-        NavigationManager.NavigateTo("/account/login");
-    
+        if (string.IsNullOrEmpty(userId))
+            NavigationManager.NavigateTo("/account/login");
+
+    }
 }

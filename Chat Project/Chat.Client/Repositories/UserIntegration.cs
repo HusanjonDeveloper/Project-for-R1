@@ -1,6 +1,7 @@
 using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using Blazored.LocalStorage;
 using Chat.Client.DTOs;
 using Chat.Client.Models;
 using Chat.Client.Repositories.Contracts;
