@@ -24,5 +24,6 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress =
 builder.Services.AddBlazoredLocalStorage();
 
 builder.Services.AddScoped<IUserIntegration, UserIntegration>();
+builder.Services.AddScoped<IChatIntegration, ChatIntegration>();
 
 await builder.Build().RunAsync();
