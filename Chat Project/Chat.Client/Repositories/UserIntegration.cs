@@ -1,15 +1,18 @@
 using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using Chat.Client.DTOs;
 using Chat.Client.Models;
 using Chat.Client.Repositories.Contracts;
+using Chat.Client.Services;
 
 namespace Chat.Client.Repositories;
 
-public class UserIntegration(HttpClient httpClient, ILocalStorageService localStorageService) : IUserIntegration
+public class UserIntegration(HttpClient httpClient, ILocalStorageService localStorageService, StorageService storageService) : IUserIntegration
 {
     private readonly HttpClient _httpClient = httpClient;
     private readonly ILocalStorageService _localStorageService = localStorageService;
+    private readonly StorageService _storageService = storageService;
 
     public async Task<Tuple<HttpStatusCode, string>> Login(LoginModel model)
     {
@@ -73,5 +76,74 @@ public class UserIntegration(HttpClient httpClient, ILocalStorageService localSt
             return new(statusCode, "Unauthorized");
 
         return new(statusCode, "Something wrong");
+    }
+
+    public async Task<Tuple<HttpStatusCode, object?>> GetProfile(byte age)
+    {
+        await AddTokenToHeader();
+        
+       var url = "api/users/profile";
+       var result = await _httpClient.GetAsync(url);
+       
+       var statusCode = result.StatusCode;
+
+       object? response;
+
+       if (statusCode == HttpStatusCode.OK)
+       {
+           response = await result.Content.ReadFromJsonAsync<UserDto>();
+       }
+       else
+       {
+           response = await result.Content.ReadFromJsonAsync<string>();
+       }
+       
+       return new (statusCode, response);
+
+    }
+
+    public async Task<Tuple<HttpStatusCode, object?>> UpdateAge(byte age)
+    {
+        var url = "api/users/update-user-general-info";
+        await AddTokenToHeader();
+
+        var model = new UpdateUserGeneralInfo()
+        {
+            Age = age.ToString()
+        };
+
+        var rresult = await _httpClient.PostAsJsonAsync(url, model);
+        
+        var statusCode = rresult.StatusCode;
+
+        object response = rresult.Content.ReadFromJsonAsync<object>();
+        
+        return new (statusCode, response);
+    }
+
+    public async Task<Tuple<HttpStatusCode, object?>> UpdateBio(string bio)
+    {
+        var url = "api/users/update-bio";
+        await AddTokenToHeader();
+        
+        var rresult = await _httpClient.PostAsJsonAsync(url, bio);
+        
+        var statusCode = rresult.StatusCode;
+
+        object response = rresult.Content.ReadFromJsonAsync<object>();
+        
+        return new (statusCode, response);
+    }
+
+    private async Task AddTokenToHeader()
+    {
+        
+        string? token = await _storageService.GetToken();
+
+        if (!string.IsNullOrEmpty(token))
+        {
+            _httpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("Bearer", token);
+        }
     }
 }
