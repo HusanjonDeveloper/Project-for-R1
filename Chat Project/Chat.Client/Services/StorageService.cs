@@ -19,7 +19,7 @@ public class StorageService(ILocalStorageService localStorageService)
         return token;
     }
 
-    public async Task DeleteToken()
+    public static async Task DeleteToken()
     {
         await _localStorageService.RemoveItemAsync(Key);
     }
