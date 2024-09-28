@@ -1,21 +1,28 @@
-﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{9A3D087B-D47D-46EF-870D-756126F13A57}|https">
-  <MonoDevelop.Ide.ItemProperties.Chat.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+﻿<Properties StartupConfiguration="{9A3D087B-D47D-46EF-870D-756126F13A57}|https" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Chat.Client PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Chat.Client/Layout/MainLayout.razor">
+    <Files>
+      <File FileName="../Chat.Client/Services/StorageService.cs" />
+      <File FileName="../Chat.Client/Repositories/UserIntegration.cs" />
+      <File FileName="../Chat.Client/Layout/MainLayout.razor" Line="32" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Chat.Api" expanded="True" selected="True">
-            <Node name="Chat.Client" expanded="True" />
+          <Node name="Chat.Api" expanded="True">
+            <Node name="Chat.Client">
+              <Node name="Layout" expanded="True" />
+              <Node name="Services" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Chat.Client PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

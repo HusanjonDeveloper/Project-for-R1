@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Nwi8OJM0ZFk=",
+  "dgSpecHash": "MGQocqpe4CQ=",
   "success": true,
   "projectFilePath": "/Users/macbook/Desktop/Projects/Project-for-R1/Chat Project/Chat.Api/Chat.Api.csproj",
   "expectedPackageFiles": [
     "/Users/macbook/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/macbook/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",
+    "/Users/macbook/.nuget/packages/blazored.localstorage/4.5.0/blazored.localstorage.4.5.0.nupkg.sha512",
     "/Users/macbook/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",
     "/Users/macbook/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/macbook/.nuget/packages/humanizer.core.af/2.14.1/humanizer.core.af.2.14.1.nupkg.sha512",
