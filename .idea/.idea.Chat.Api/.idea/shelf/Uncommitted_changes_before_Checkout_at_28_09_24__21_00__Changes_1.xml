@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_28_09_24,_21_00_[Changes]1" date="1727539239849" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.Chat.Api/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_24,_21_00_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 28/09/24, 21:00 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="obj/project.nuget.cache" />
+    <option name="AFTER_PATH" value="obj/project.nuget.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Chat.Api/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_24,_21_00_[Changes]1/project.nuget.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="obj/Debug/net9.0/Chat.Api.AssemblyInfoInputs.cache" />
+    <option name="AFTER_PATH" value="obj/Debug/net9.0/Chat.Api.AssemblyInfoInputs.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Chat.Api/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_24,_21_00_[Changes]1/Chat.Api.AssemblyInfoInputs.cache" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="obj/Debug/net9.0/Chat.Api.assets.cache" />
+    <option name="AFTER_PATH" value="obj/Debug/net9.0/Chat.Api.assets.cache" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.Chat.Api/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_09_24,_21_00_[Changes]1/Chat.Api.assets.cache" />
+  </binary>
+</changelist>
