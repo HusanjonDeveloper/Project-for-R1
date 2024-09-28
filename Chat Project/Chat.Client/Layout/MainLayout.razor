@@ -2,6 +2,7 @@
 @using System.Security.Claims
 @using Chat.Client.Services
 @using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
 @inherits LayoutComponentBase
 @inject AuthenticationStateProvider StateProvider
 <div class="page">
@@ -34,7 +35,7 @@
     {
         await StorageService.DeleteToken();
 
-        NavigationManager.Refresh(true);
+        Navigation.Refresh(true);
     }
 
 

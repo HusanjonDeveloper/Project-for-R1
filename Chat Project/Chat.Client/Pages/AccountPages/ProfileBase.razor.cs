@@ -12,7 +12,7 @@ public class ProfileBaseRazor : ComponentBase
     private IUserIntegration UserIntegration { get; set; }
     
     [Inject]
-   private NavigationManager NavigationManager { get; set; }
+   private NavigationManager Navigation { get; set; }
     protected string ImgUrl { get; set; }
     protected UserDto? User { get; set; }
     
@@ -22,7 +22,7 @@ public class ProfileBaseRazor : ComponentBase
 
     protected override async Task OnInitializedAsync()
     {
-        var (statusCode, response) = await UserIntegration.GetProfile();
+        var (statusCode, response) = await UserIntegration.GetProfile(Age);
 
         if (statusCode == HttpStatusCode.OK)
         {
@@ -48,12 +48,12 @@ public class ProfileBaseRazor : ComponentBase
     {
         var (statusCode, response) = await UserIntegration.UpdateAge(Age);
 
-        NavigationManager.Refresh(true);
+        Navigation.Refresh(true);
     }
 
     protected async Task UpdateBio()
     {
         var (statusCode, response) = await UserIntegration.UpdateBio(Bio);
-        NavigationManager.Refresh(true);
+        Navigation.Refresh(true);
     }
 }
