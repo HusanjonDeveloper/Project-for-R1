@@ -1,8 +1,9 @@
 @using Chat.Client.Services
 @using Microsoft.AspNetCore.Components.Authorization
-@using Microsoft.EntityFrameworkCore.Metadata.Internal
 @inherits LayoutComponentBase
 @inject AuthenticationStateProvider StateProvider
+@inject NavigationManager Navigation
+
 <div class="page">
     <div class="sidebar">
         <NavMenu />

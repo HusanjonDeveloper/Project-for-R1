@@ -16,7 +16,7 @@
                 </Authorizing>
                 <NotAuthorized>
                     @{
-                        NavigationManager.NavigateTo("/account/login");
+                        Navigation.NavigateTo("/account/login");
                     }
                 </NotAuthorized>
             </AuthorizeRouteView>
@@ -54,7 +54,7 @@
         var userId = user.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)!.Value;
 
         if (string.IsNullOrEmpty(userId))
-            NavigationManager.NavigateTo("/account/login");
+            Navigation.NavigateTo("/account/login");
 
     }
 }

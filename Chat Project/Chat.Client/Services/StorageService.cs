@@ -2,9 +2,9 @@ using Blazored.LocalStorage;
 
 namespace Chat.Client.Services;
 
-public class StorageService(ILocalStorageService localStorageService)
+public class StorageService(ILocalStorageService _localStorageService)
 {
-    private readonly ILocalStorageService _localStorageService = localStorageService;
+    private static readonly ILocalStorageService _localStorageService;
 
     private const string Key = "token";
 
@@ -19,7 +19,7 @@ public class StorageService(ILocalStorageService localStorageService)
         return token;
     }
 
-    public async Task DeleteToken()
+    public static async Task DeleteToken()
     {
         await _localStorageService.RemoveItemAsync(Key);
     }
