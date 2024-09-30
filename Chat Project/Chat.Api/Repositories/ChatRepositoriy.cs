@@ -54,7 +54,8 @@ public class ChatRepositoriy(ChatDbContext context) : IChatRepositoriy
     {
         var userChat = await _context.UserChats
             .SingleOrDefaultAsync(x => x.UserId == fromUserId 
-                                       || x.UserId == toUserId);
+                                       && x.ToUserId == toUserId);
+        
         if (userChat is null)
         {
             var chat = await GetUserChatById(userChat.UserId, userChat.ChatId);
