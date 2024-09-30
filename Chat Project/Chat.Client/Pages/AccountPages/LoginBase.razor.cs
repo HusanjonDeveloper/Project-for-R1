@@ -1,5 +1,7 @@
 using System.Net;
+using Blazored.LocalStorage;
 using Chat.Client.Models;
+using Chat.Client.Repositories.Contracts;
 using Microsoft.AspNetCore.Components;
 
 namespace Chat.Client.Pages.AccountPages;

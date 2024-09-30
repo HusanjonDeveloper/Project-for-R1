@@ -1,4 +1,5 @@
 using System.Net;
+using Chat.Client.DTOs;
 using Chat.Client.Repositories.Contracts;
 using Microsoft.AspNetCore.Components;
 

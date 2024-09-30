@@ -1,6 +1,7 @@
 using System.Net;
 using Chat.Client.Constants;
 using Chat.Client.DTOs;
+using Chat.Client.Repositories.Contracts;
 using Microsoft.AspNetCore.Components;
 
 namespace Chat.Client.Pages.AccountPages;

@@ -1,5 +1,6 @@
 using System.Net;
 using System.Security.Claims;
+using Chat.Client.DTOs;
 using Chat.Client.Repositories.Contracts;
 using Chat.Client.Services;
 using Microsoft.AspNetCore.Components;
