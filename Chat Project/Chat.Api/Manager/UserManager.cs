@@ -72,6 +72,27 @@ public class UserManager( IUnitOfWork unitOfWork)
         return "Login Successful";
     }
 
+    public async Task<byte[]> AddOrUpdatePhoto(Guid userId,IFormFile file)
+    {
+
+        var  user = await _unitOfWork.UserRepository.GetUserById(userId);
+
+        var check = Helpers.StaticHelper.IsPhoto(file);
+        
+         
+        if (!check)
+            throw new NotPhotoType();
+        
+        var data = Helpers.StaticHelper.GetData(file);
+        
+        user.PhotoData = data;
+        
+        await _unitOfWork.UserRepository.UpdateUser(user);
+        
+        return data;
+
+    }
+
     private string GetGender(string gender)
     {
         var checkForGenderExist = gender.ToLower() == UserConstants.Male
@@ -79,6 +100,6 @@ public class UserManager( IUnitOfWork unitOfWork)
         
         return checkForGenderExist ? gender : UserConstants.Male;
     }
-    
+
     
 }     

@@ -24,7 +24,7 @@ public class User
 
     public  string? Bio { get; set; }
 
-    public  string? PhotoUrl { get; set; }
+    public  byte[]? PhotoData { get; set; }
     public  DateTime  CreatedDateTime => DateTime.UtcNow;
 
     public  List<UserChat>? UserChats { get; set; }

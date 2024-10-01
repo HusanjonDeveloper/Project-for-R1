@@ -43,7 +43,7 @@ namespace Chat.Api.Controllers
             var result = await _userManager.Register(model);
             return Ok(result);
         }
-        
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
@@ -57,8 +57,33 @@ namespace Chat.Api.Controllers
                 return BadRequest(e.Message);
             }
         }
-        
-        
+
+        [HttpPost("{userId:guid}/add-or-update-photo")]
+        public async Task<IActionResult> AddOrUpdatePhoto(Guid userId,[FromForm] FileClass model)
+        {
+            var result = await _userManager.AddOrUpdatePhoto(userId,model.file);
+            return Ok(result);
+        }
+
         
     }
+    
 }
+
+public class FileClass
+{
+    public  IFormFile file { get; set; }
+}
+
+
+/*
+ photo file string xoaltda kelishi misol uchun 
+public class PhotoClass
+{
+    public  string Name { get; set; }
+
+    public  string Description { get; set; }
+
+    public  IFormFile file { get; set; }
+}
+*/
