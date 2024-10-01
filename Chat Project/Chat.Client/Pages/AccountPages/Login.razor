@@ -1,9 +1,9 @@
 @page "/account/login"
-@using Microsoft.EntityFrameworkCore.Metadata.Internal
-@inherits LoginBase
+@inherits LoginBaseRazor
 
 
-<h3>LoginBase</h3>
+
+<h3>Login</h3>
 
 <div>
     <label>Username</label>
@@ -14,14 +14,14 @@
     <label>Password</label>
     <InputText @bind-Value="@Model.Password"></InputText>
 </div>
-
-<button type="submit" class="btn btn-primary" @onclick="Login">Login</button>
+    
+<button type="submit" class="btn btn-primary" @onclick="LoginClicked">Login</button>
 
 
 
 
 
 @code {
-
+    
 
 }
