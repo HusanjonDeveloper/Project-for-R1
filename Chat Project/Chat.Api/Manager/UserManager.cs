@@ -1,19 +1,24 @@
 
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using Chat.Api.Constants;
 using Chat.Api.DTOs;
 using Chat.Api.Entities;
 using Chat.Api.Exceptions;
 using Chat.Api.Extensions;
+using Chat.Api.Helpers;
 using Chat.Api.Model.UserModels;
 using Chat.Api.Repositories;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Chat.Api.Manager;
 
-public class UserManager( IUnitOfWork unitOfWork)
+public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager)
 {
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
-
+    
+    private readonly JwtManager _jwtManager = jwtManager;
     public async Task<List<UserDto>> GetAllUsers()
     {
         var users = await _unitOfWork.UserRepository.GetAllUsers();
@@ -69,7 +74,9 @@ public class UserManager( IUnitOfWork unitOfWork)
         if (result == PasswordVerificationResult.Failed)
             throw new Exception("Invalid  password");
 
-        return "Login Successful";
+        var token = _jwtManager.GenerateToken(user);
+
+        return token;
     }
 
     public async Task<byte[]> AddOrUpdatePhoto(Guid userId,IFormFile file)

@@ -1,16 +1,20 @@
 
 using Chat.Api.Exceptions;
+using Chat.Api.Helpers;
 using Chat.Api.Manager;
 using Chat.Api.Model.UserModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chat.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController(UserManager userManager) : ControllerBase
+    public class UsersController(UserManager userManager, UserHelper userHelper) : ControllerBase
     {
         private readonly UserManager _userManager = userManager;
+        
+        private readonly UserHelper userHelper = userHelper;
 
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
@@ -19,12 +23,13 @@ namespace Chat.Api.Controllers
             return Ok(user);
         }
 
-        [HttpGet("{id:guid}")]
-        public async Task<IActionResult> GetUserById(Guid id)
+        [Authorize]
+        [HttpGet("profile")]
+        public async Task<IActionResult> GetUserById()
         {
             try
             {
-                var user = await _userManager.GetUsrById(id);
+                var user = await _userManager.GetUsrById(userHelper.GetUserId());
                 return Ok(user);
             }
             catch (UserNotFoundException e)
