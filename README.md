@@ -1,4 +1,4 @@
 # Project-for-R1
 
-![Screenshot 2024-10-02 at 21 28 23](https://github.com/user-attachments/assets/e8605ba6-efd6-4ac1-a3f8-be09c10e8da7)
+<img width="1710" alt="Screenshot 2024-10-03 at 01 05 38" src="https://github.com/user-attachments/assets/4f69bfcd-43a0-49f6-a904-4551a5c8cccd">
 
