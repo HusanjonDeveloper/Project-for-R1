@@ -7,4 +7,6 @@ public interface IUnitOfWork
     IChatRepositoriy ChatRepositoriy { get; }
     
     IUserChatRepository UserChatRepository { get; }
+    
+    IMessageRepository MessageRepository { get; }
 }
