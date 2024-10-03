@@ -76,6 +76,7 @@ namespace Chat.Api
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IChatRepositoriy, ChatRepositoriy>();
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<IMessageRepository, MessageRepository>();
             builder.Services.AddScoped<UserManager>();
             builder.Services.AddScoped<ChatManager>();
             builder.Services.AddScoped<JwtManager>();
