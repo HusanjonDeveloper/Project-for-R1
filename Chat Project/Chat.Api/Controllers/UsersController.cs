@@ -86,7 +86,7 @@ namespace Chat.Api.Controllers
         {
             try
             {
-                var result = await _userManager.UpdateUserGeneralInfo(UserId, info);
+                var result = await _userManager.UpdateUserGeneralInfo(userHelper.GetUserId(), info);
                 return Ok(result);
             }
             catch (Exception e)
@@ -102,7 +102,7 @@ namespace Chat.Api.Controllers
         {
             try
             {
-                var result = await _userManager.UpdateUsername(UserId, model);
+                var result = await _userManager.UpdateUsername(userHelper.GetUserId(), model);
                 return Ok(result);
             }
             catch (Exception e)
