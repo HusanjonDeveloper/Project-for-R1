@@ -31,4 +31,20 @@ public class ChatsController(ChatManager chatManager, UserHelper userHelper) : C
         var chat = await _chatManager.AddOrEnterChat(userHelper.GetUserId(), toUserId);
         return Ok(chat);
     }
+
+    [Authorize]
+    [HttpDelete("{chatId:guid}")]
+    public async Task<IActionResult> DeleteChat(Guid chatId)
+    {
+        try
+        {
+            var result = await _chatManager.DeleteChat(userHelper.GetUserId(), chatId);
+            return Ok(result);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+    
 }

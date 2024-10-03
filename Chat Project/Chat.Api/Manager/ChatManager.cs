@@ -80,6 +80,17 @@ public class ChatManager(IUnitOfWork unitOfWork)
           
           return chat.ParseToDto(); 
      }
+
+     public async Task<string> DeleteChat(Guid userId, Guid chatId)
+     {
+          var user = await _unitOfWork.UserRepository.GetUserById(userId);
+
+          var chat = await _unitOfWork.ChatRepositoriy.GetUserChatById(userId, chatId);
+
+          await _unitOfWork.ChatRepositoriy.DeleteChat(chat);
+          
+          return "Deleted Successfully";
+     }
       
       
 }
