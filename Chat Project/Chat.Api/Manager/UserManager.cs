@@ -1,17 +1,13 @@
 
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using Chat.Api.Constants;
 using Chat.Api.DTOs;
 using Chat.Api.Entities;
 using Chat.Api.Exceptions;
 using Chat.Api.Extensions;
-using Chat.Api.Helpers;
 using Chat.Api.Model.UserModels;
 using Chat.Api.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Chat.Api.Manager;
 

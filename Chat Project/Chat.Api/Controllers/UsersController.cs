@@ -70,6 +70,47 @@ namespace Chat.Api.Controllers
             var result = await _userManager.AddOrUpdatePhoto(userId,model.file);
             return Ok(result);
         }
+        
+        [Authorize(Roles = "admin,user")]
+        [HttpPost("update-bio")]
+        public async Task<IActionResult> UpdateBio([FromBody] string bio) 
+        {
+            var result = await _userManager.UpdateBio(userHelper.GetUserId(), bio);
+            return Ok(result);
+
+        }
+        
+        [Authorize(Roles = "admin,user")]
+        [HttpPost("update-user-general-info")]
+        public async Task<IActionResult> UpdateUserGeneralInfo([FromBody] UpdateUserGeneralInfo info)
+        {
+            try
+            {
+                var result = await _userManager.UpdateUserGeneralInfo(UserId, info);
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        
+        
+        [Authorize(Roles = "admin,user")]
+        [HttpPost("update-username")]
+        public async Task<IActionResult> UpdateUsername([FromBody] UpdateUsernameModel model)
+        {
+            try
+            {
+                var result = await _userManager.UpdateUsername(UserId, model);
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
 
         
     }
