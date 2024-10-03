@@ -19,4 +19,9 @@ public class UnitOfWork(ChatDbContext context) : IUnitOfWork
 
     public IUserChatRepository UserChatRepository =>
     _userChatRepository ?? new UserChatRepository(context);
+    
+    public IMessageRepository MessageRepository =>
+    _messageRepository ?? new MessageRepository(context);
+
+    private IMessageRepository _messageRepository { get; }
 }
