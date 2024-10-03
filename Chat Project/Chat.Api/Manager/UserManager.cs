@@ -11,13 +11,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Chat.Api.Manager;
 
-public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager, MemoryCacheManager cacheManager)
+public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager, MemoryCacheManager cacheManager, UserRepository userRepository)
 {
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
     
     private readonly JwtManager _jwtManager = jwtManager;
 
     private readonly MemoryCacheManager _cacheManager = cacheManager;
+    
+    private readonly UserRepository _userRepository = userRepository;
 
     public async Task<List<UserDto>> GetAllUsers()
     {
@@ -169,7 +171,7 @@ public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager, MemoryC
 
         await CheckForExist(model.Username);
 
-        user.Username = model.Username;
+        user.UserName = model.Username;
 
         await _unitOfWork.UserRepository.UpdateUser(user);
 
@@ -184,5 +186,13 @@ public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager, MemoryC
         _cacheManager.GetOrUpdateDtos(Key,users.ParseToDtos());
     }
 
+    private async Task CheckForExist(string username)
+    {
+        var user = await _userRepository.GetUserByUsername(username);
+
+        if (user is not null)
+            throw new UserExsitException();
+    }
     
+    private const string Key = "users";
 }     
