@@ -19,4 +19,32 @@
         <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\AccountPages\Login.razor" />
+      <_ContentIncludedByDefault Remove="Pages\AccountPages\LoginSuccessFully.razor" />
+      <_ContentIncludedByDefault Remove="Pages\AccountPages\Profile.razor" />
+      <_ContentIncludedByDefault Remove="Pages\AccountPages\Register.razor" />
+      <_ContentIncludedByDefault Remove="Pages\AccountPages\Users.razor" />
+      <_ContentIncludedByDefault Remove="Pages\ChatPages\SeeChat.razor" />
+      <_ContentIncludedByDefault Remove="Pages\ChatPages\UserChats.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Counter.razor" />
+      <_ContentIncludedByDefault Remove="Pages\ErrorPage.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Home.razor" />
+      <_ContentIncludedByDefault Remove="Pages\Weather.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Properties\Pages\AccountPages\Login.razor" />
+      <AdditionalFiles Include="Properties\Pages\AccountPages\LoginSuccessFully.razor" />
+      <AdditionalFiles Include="Properties\Pages\AccountPages\Profile.razor" />
+      <AdditionalFiles Include="Properties\Pages\AccountPages\Register.razor" />
+      <AdditionalFiles Include="Properties\Pages\AccountPages\Users.razor" />
+      <AdditionalFiles Include="Properties\Pages\ChatPages\SeeChat.razor" />
+      <AdditionalFiles Include="Properties\Pages\ChatPages\UserChats.razor" />
+      <AdditionalFiles Include="Properties\Pages\Counter.razor" />
+      <AdditionalFiles Include="Properties\Pages\ErrorPage.razor" />
+      <AdditionalFiles Include="Properties\Pages\Home.razor" />
+      <AdditionalFiles Include="Properties\Pages\Weather.razor" />
+    </ItemGroup>
+
 </Project>

@@ -63,6 +63,7 @@ namespace Chat.Api.Controllers
             }
         }
 
+        [Authorize]
         [HttpPost("{userId:guid}/add-or-update-photo")]
         public async Task<IActionResult> AddOrUpdatePhoto(Guid userId,[FromForm] FileClass model)
         {

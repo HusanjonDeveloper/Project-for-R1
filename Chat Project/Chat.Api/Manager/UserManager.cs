@@ -10,15 +10,19 @@ using Chat.Api.Helpers;
 using Chat.Api.Model.UserModels;
 using Chat.Api.Repositories;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Chat.Api.Manager;
 
-public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager)
+public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager, MemoryCacheManager cacheManager)
 {
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
     
     private readonly JwtManager _jwtManager = jwtManager;
+
+    private readonly MemoryCacheManager _cacheManager = cacheManager;
+
     public async Task<List<UserDto>> GetAllUsers()
     {
         var users = await _unitOfWork.UserRepository.GetAllUsers();
@@ -106,6 +110,82 @@ public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager)
                                    || gender.ToLower() == UserConstants.Female;
         
         return checkForGenderExist ? gender : UserConstants.Male;
+    }
+    
+    public async Task<UserDto> UpdateBio(Guid userId, string bio)
+    {
+        var user = await _unitOfWork.UserRepository.GetUserById(userId);
+        if (!string.IsNullOrEmpty(bio)) {
+
+            user.Bio = bio;
+            await _unitOfWork.UserRepository.UpdateUser(user);
+        }
+        await Set();
+        return user.ParseToDto();
+    }
+    
+    public async Task<UserDto> UpdateUserGeneralInfo(Guid userId, UpdateUserGeneralInfo info)
+    {
+        var user = await _unitOfWork.UserRepository.GetUserById(userId);
+
+        bool check = false;
+        
+        if (!string.IsNullOrEmpty(info.Firstname))
+        {
+            user.FirstName = info.Firstname;
+            check = true;
+        }
+        
+        if (!string.IsNullOrEmpty(info.Lastname))
+        {
+            user.LastName = info.Lastname;
+            check = true;
+        }
+        
+        if (!string.IsNullOrEmpty(info.Age))
+        {
+           
+            try
+            {
+                byte age = byte.Parse(info.Age);
+
+                user.Age = age;
+                check = true;
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Age must be number");
+            }
+        }
+
+        if (check)
+        {
+            await _unitOfWork.UserRepository.UpdateUser(user);
+            await Set();
+        }
+
+        return user.ParseToDto();
+    }
+    
+    public async Task<UserDto> UpdateUsername(Guid userId,UpdateUsernameModel model )
+    {
+        var user = await _unitOfWork.UserRepository.GetUserById(userId);
+
+        await CheckForExist(model.Username);
+
+        user.Username = model.Username;
+
+        await _unitOfWork.UserRepository.UpdateUser(user);
+
+        await Set();
+        return user.ParseToDto();
+
+    }
+
+    private async Task Set()
+    {
+        var users = await _unitOfWork.UserRepository.GetAllUsers();
+        _cacheManager.GetOrUpdateDtos(Key,users.ParseToDtos());
     }
 
     
