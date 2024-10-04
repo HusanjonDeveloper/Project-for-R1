@@ -100,7 +100,8 @@ namespace Chat.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-            
+
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
             app.UseAuthentication();
             app.UseAuthorization();

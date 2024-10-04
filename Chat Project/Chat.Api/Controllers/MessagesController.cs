@@ -91,5 +91,22 @@ public class MessagesController(MessageManager messageManager, UserHelper userHe
          return BadRequest(e.Message);
       }
    }
+
+
+   [HttpPost("send-file-message")]
+   public async Task<IActionResult> SendFileMessage(Guid chatId, FileModel model)
+   {
+      try
+      {
+         var userId = _userHelper.GetUserId();
+
+         var result = await _messageManager.SendFileMessage(userId, chatId, model);
+         return Ok(result);
+      }
+      catch (Exception e)
+      {
+         return BadRequest(e.Message);
+      }
+   }
    
 }
