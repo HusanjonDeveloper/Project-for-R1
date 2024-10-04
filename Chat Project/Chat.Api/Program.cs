@@ -82,12 +82,11 @@ namespace Chat.Api
             builder.Services.AddScoped<ChatManager>();
             builder.Services.AddScoped<JwtManager>();
             builder.Services.AddScoped<UserHelper>();
+            builder.Services.AddScoped<IUserChatRepository, UserChatRepository>();
+            builder.Services.AddHttpContextAccessor();
             builder.Services.AddScoped<MemoryCacheManager>();
             builder.Services.AddMemoryCache();
-            
-            builder.Services.AddHttpContextAccessor();
-            
-            builder.Services.AddScoped<IUserChatRepository, UserChatRepository>();
+        
              
             builder.Services.AddDbContext<ChatDbContext>(options =>
             {
