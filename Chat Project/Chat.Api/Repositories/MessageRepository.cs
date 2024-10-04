@@ -13,13 +13,16 @@ public class MessageRepository(ChatDbContext dbContext) : IMessageRepository
 
     public async Task<List<Message>> GetMessages()
     {
-        var message = await _dbContext.Messages.ToListAsync();
+        var message = await _dbContext.Messages
+            .Include(x => x.Content).ToListAsync();
+        
         return message;
     }
 
     public async Task<List<Message>> GetchatMessages(Guid chatId)
     {
-        var message = await _dbContext.Messages.
+        var message = await _dbContext.Messages
+            .Include(x => x.Content).
             Where(x => x.ChatId == chatId).ToListAsync();
        
         return message;

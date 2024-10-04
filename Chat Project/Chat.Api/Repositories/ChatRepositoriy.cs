@@ -29,7 +29,8 @@ public class ChatRepositoriy(ChatDbContext context) : IChatRepositoriy
         foreach (var chat in userChats)
         {
             var sortedChat = await
-                _context.Chats.Include(c => c.Messages)
+                _context.Chats.Include(m => m.Messages)!
+                    .ThenInclude(c =>c.Content)
                     .SingleAsync(x => x.Id == chat.ChatId);
                  sortedChats.Add(sortedChat);
         }
