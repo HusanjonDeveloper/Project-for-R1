@@ -27,6 +27,8 @@ public class User
     public  byte[]? PhotoData { get; set; }
     public  DateTime  CreatedDateTime => DateTime.UtcNow;
 
+    public  string? Role { get; set; }
+
     public  List<UserChat>? UserChats { get; set; }
     
     
