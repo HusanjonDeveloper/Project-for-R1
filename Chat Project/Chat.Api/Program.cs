@@ -82,6 +82,8 @@ namespace Chat.Api
             builder.Services.AddScoped<ChatManager>();
             builder.Services.AddScoped<JwtManager>();
             builder.Services.AddScoped<UserHelper>();
+            builder.Services.AddScoped<MemoryCacheManager>();
+            builder.Services.AddMemoryCache();
             
             builder.Services.AddHttpContextAccessor();
             
