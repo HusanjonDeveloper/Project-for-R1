@@ -7,4 +7,6 @@ public interface IUserChatRepository
     Task AddUserChat(UserChat userChat);
     
     Task DeleteUserChat(UserChat userChat);
+    
+    Task GetUserChat(Guid userId, Guid chatId);
 }
