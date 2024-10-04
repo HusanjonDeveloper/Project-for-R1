@@ -5,10 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Chat.Api.Controllers;
 
+[Authorize]
 [Route("api/users/user_id/[controller]")]
 [ApiController]
 
-public class ChatsController(ChatManager chatManager, UserHelper userHelper) : Controller
+public class ChatsController(ChatManager chatManager, UserHelper userHelper) : ControllerBase
 {
 
     private readonly ChatManager _chatManager = chatManager;
@@ -16,7 +17,7 @@ public class ChatsController(ChatManager chatManager, UserHelper userHelper) : C
     private readonly UserHelper userHelper = userHelper;
     
     
-    [Authorize]
+    
     [HttpGet]
     public async Task<IActionResult> GetUserChats()
     {
@@ -24,7 +25,7 @@ public class ChatsController(ChatManager chatManager, UserHelper userHelper) : C
         return Ok(chats);
     }
 
-    [Authorize]
+  
     [HttpPost]
     public async Task<IActionResult> AddOrEnterChat([FromBody] Guid toUserId)
     {
@@ -32,7 +33,7 @@ public class ChatsController(ChatManager chatManager, UserHelper userHelper) : C
         return Ok(chat);
     }
 
-    [Authorize]
+   
     [HttpDelete("{chatId:guid}")]
     public async Task<IActionResult> DeleteChat(Guid chatId)
     {
