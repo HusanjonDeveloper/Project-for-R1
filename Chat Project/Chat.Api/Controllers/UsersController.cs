@@ -16,6 +16,7 @@ namespace Chat.Api.Controllers
         
         private readonly UserHelper userHelper = userHelper;
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
