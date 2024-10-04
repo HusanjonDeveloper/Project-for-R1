@@ -42,5 +42,8 @@
   <ItemGroup>
     <None Remove="Model\TextModel\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\MessageFile\" />
+  </ItemGroup>
 
 </Project>
