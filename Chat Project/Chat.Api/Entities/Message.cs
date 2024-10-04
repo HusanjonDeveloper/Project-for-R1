@@ -17,7 +17,7 @@ public class Message
 
     public  Chat? Chat { get; set; }
 
-    public  int ContentId { get; set; }
+    public  int? ContentId { get; set; }
 
     public  Content? Content { get; set; }
 
