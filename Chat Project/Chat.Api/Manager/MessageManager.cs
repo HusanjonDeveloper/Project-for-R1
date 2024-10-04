@@ -26,6 +26,7 @@ public class MessageManager(IUnitOfWork unitOfWork)
 
     public async Task<List<MessageDto>> GetChatMessage(Guid chatId)
     {
+        
         var message = await _unitOfWork.MessageRepository
             .GetchatMessages(chatId);
         
@@ -47,16 +48,18 @@ public class MessageManager(IUnitOfWork unitOfWork)
         return message.ParseToDto();
     }
 
-    public async Task<MessageDto> SendTextMessage(Guid userId, TextModel model)
+    public async Task<MessageDto> SendTextMessage(Guid userId,Guid chatId, TextModel model)
     {
+        await _unitOfWork.UserChatRepository.GetUserChat(userId, chatId);
         var user = await _unitOfWork.UserRepository.GetUserById(userId);
         
+      
         var message = new  Entities.Message()
         {
             Text = model.Text,
             FromUsrId = userId,
             FromUserName = user.UserName,
-            ChatId = model.ChatId
+            ChatId = chatId
         };
 
         await _unitOfWork.MessageRepository.AddMessage(message);
