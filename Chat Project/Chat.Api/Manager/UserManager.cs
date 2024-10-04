@@ -7,11 +7,11 @@ using Chat.Api.Extensions;
 using Chat.Api.Model.UserModels;
 using Chat.Api.Repositories;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Chat.Api.Manager;
 
-public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager, MemoryCacheManager cacheManager, UserRepository userRepository)
+public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager,
+    MemoryCacheManager cacheManager, UserRepository userRepository)
 {
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
     
