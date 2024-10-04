@@ -39,4 +39,22 @@ public static class ParseToDtoExtension
         dtos.AddRange(chats.Select(x => x.ParseToDto()));
         return dtos;
     } 
+    
+    
+    public static MessageDto ParseToDto(this Message chat)
+    {
+        MessageDto dto = chat.Adapt<MessageDto>();
+        return dto;
+    }
+
+    public static List<MessageDto> ParseToDtos(this List<Message>? chats)
+    {
+        var dtos = new List<MessageDto>();
+
+        if (chats == null || chats.Count == 0)
+            return dtos;
+
+        dtos.AddRange(chats.Select(x => x.ParseToDto()));
+        return dtos;
+    } 
 }
