@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Chat.Api.Controllers;
 
-[Authorize]
+
 [Route("api/users/user_id/chats/{chatId}[controller]")]
 [ApiController]
 
@@ -17,6 +17,7 @@ public class MessagesController(MessageManager messageManager, UserHelper userHe
    private readonly UserHelper _userHelper = userHelper;
 
    // Admin 
+   [Authorize(Roles = "admin")]
    [HttpGet("/api/messages")]
    public async Task<IActionResult> GetllMessages()
    {
@@ -32,7 +33,8 @@ public class MessagesController(MessageManager messageManager, UserHelper userHe
       }
    }
 
-   // Admin
+   // user
+   [Authorize(Roles = "user")]
    [HttpGet ("/api/messages/{messageId:int}")]
    public async Task<IActionResult> GetMessageById(int messageId)
    {
@@ -48,6 +50,7 @@ public class MessagesController(MessageManager messageManager, UserHelper userHe
       }
    }
 
+   [Authorize(Roles = "admin,user")]
    [HttpGet]
    public async Task<IActionResult> GetChatMessages(Guid chatId)
    {
@@ -62,8 +65,8 @@ public class MessagesController(MessageManager messageManager, UserHelper userHe
       }
    }
 
+   [Authorize(Roles = "admin,user")]
    [HttpGet("{messageId:int}")]
-
    public async Task<IActionResult> GetChatMessageById(Guid chatId, int messageId)
    {
       try
@@ -77,6 +80,7 @@ public class MessagesController(MessageManager messageManager, UserHelper userHe
       }
    }
 
+   [Authorize(Roles = "admin,user")]
    [HttpPost("send-text-message")]
    public async Task<IActionResult> SendTextMessage(Guid chatId, TextModel model)
    {
@@ -92,7 +96,7 @@ public class MessagesController(MessageManager messageManager, UserHelper userHe
       }
    }
 
-
+   [Authorize(Roles = "admin,user")]
    [HttpPost("send-file-message")]
    public async Task<IActionResult> SendFileMessage(Guid chatId, FileModel model)
    {

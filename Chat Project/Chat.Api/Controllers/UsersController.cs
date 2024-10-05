@@ -16,7 +16,7 @@ namespace Chat.Api.Controllers
         
         private readonly UserHelper userHelper = userHelper;
 
-        [Authorize]
+       [Authorize(Roles = "admin,user")]
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
@@ -24,7 +24,7 @@ namespace Chat.Api.Controllers
             return Ok(user);
         }
 
-        [Authorize]
+        [Authorize(Roles = "admin,user")]
         [HttpGet("profile")]
         public async Task<IActionResult> GetUserById()
         {

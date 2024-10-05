@@ -43,8 +43,14 @@ public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager,
             FirstName = model.FirstName,
             LastName = model.LastName,
             UserName = model.UserName,
-            Gender = GetGender(model.Gender)
+            Gender = GetGender(model.Gender),
+            Role = UserConstants.Male
         };
+        
+         if(user.UserName == "husan")
+         {
+             user.Role = UserConstants.UserRole;
+         }
         
         var passwordHash = new PasswordHasher<User>()
                                 .HashPassword(user, model.Password);
@@ -76,6 +82,12 @@ public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager,
         if (result == PasswordVerificationResult.Failed)
             throw new Exception("Invalid  password");
 
+
+        if (string.IsNullOrEmpty(user.Role))
+        {
+            user.Role ??= UserConstants.UserRole;
+            await _unitOfWork.UserRepository.AddUser(user);
+        }
         var token = _jwtManager.GenerateToken(user);
 
         return token;

@@ -30,7 +30,8 @@ public class JwtManager
         var clamis = new List<Claim>()
         {
             new Claim(ClaimTypes.Name,user.UserName),
-            new Claim(ClaimTypes.NameIdentifier,user.Id.ToString())
+            new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
+            new Claim(ClaimTypes.Role,user.Role!) // one logic will be
         };
         
         var security = new JwtSecurityToken(issuer:jwtParam.Issuer,

@@ -13,14 +13,14 @@ public class UserDto
     public  string FirstName { get; set; }
 
     public  string? LastName { get; set; }
-
     
     public  string UserName  { get; set; }
     
-   
     public  string Gender  { get; set; }
 
     public  string? Bio { get; set; }
+    
+    public  string? Role { get; set; }
 
     public  byte[]? PhotoData  { get; set; }
 

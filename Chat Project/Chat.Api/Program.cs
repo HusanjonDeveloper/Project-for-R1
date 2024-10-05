@@ -38,7 +38,7 @@ namespace Chat.Api
                     ValidateAudience = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuerSigningKey = true,
-                    ValidateLifetime = true
+                    ValidateLifetime = false
                 };
             });
             

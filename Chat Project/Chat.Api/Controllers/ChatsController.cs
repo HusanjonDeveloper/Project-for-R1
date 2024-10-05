@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Chat.Api.Controllers;
 
-[Authorize]
+[Authorize(Roles = "admin,user")]
 [Route("api/users/user_id/[controller]")]
 [ApiController]
 
