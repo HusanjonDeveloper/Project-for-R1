@@ -16,7 +16,7 @@ public class GeneralInfoController : ControllerBase
         _validator = validator;
     }
 
-    [HttpPost]
+    [HttpPost("update-info")]
     public IActionResult UpdateGeneralInfo([FromBody] GeneralInfoModel model)
     {
         ValidationResult result = _validator.Validate(model);

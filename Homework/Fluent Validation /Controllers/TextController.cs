@@ -17,7 +17,7 @@ public class TextController : ControllerBase
         _validator = validator;
     }
 
-    [HttpPost]
+    [HttpPost("text")]
     public IActionResult SubmitText([FromBody] TextModel model)
     {
         ValidationResult result = _validator.Validate(model);

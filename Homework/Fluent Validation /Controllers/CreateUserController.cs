@@ -18,7 +18,7 @@ public class CreateUserController : ControllerBase
         _validator = validator;
     }
 
-    [HttpPost]
+    [HttpPost("create-user")]
     public IActionResult CreateUser([FromBody] CreateUserModel model)
     {
   

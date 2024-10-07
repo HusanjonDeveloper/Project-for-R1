@@ -16,7 +16,7 @@ public class UpdateUsernameController : ControllerBase
         _validator = validator;
     }
 
-    [HttpPut]
+    [HttpPut("update-username")]
     public IActionResult UpdateUsername([FromBody] UpdateUsernameModel model)
     {
         ValidationResult result = _validator.Validate(model);

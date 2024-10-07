@@ -16,7 +16,7 @@ public class LoginController : ControllerBase
         _validator = validator;
     }
 
-    [HttpPost]
+    [HttpPost("login")]
     public IActionResult Login([FromBody] LoginModel model)
     {
         ValidationResult result = _validator.Validate(model);
