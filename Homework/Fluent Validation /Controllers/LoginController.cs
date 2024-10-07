@@ -25,8 +25,6 @@ public class LoginController : ControllerBase
         {
             return BadRequest(result.Errors);
         }
-
-        // Foydalanuvchini autentifikatsiya qilish jarayoni bu yerda bo'ladi
         
         return Ok("Kirish muvaffaqiyatli amalga oshirildi.");
     }
