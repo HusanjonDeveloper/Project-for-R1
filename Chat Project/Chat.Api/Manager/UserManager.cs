@@ -7,11 +7,13 @@ using Chat.Api.Extensions;
 using Chat.Api.Model.UserModels;
 using Chat.Api.Repositories;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Chat.Api.Manager;
 
 public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager,
-    MemoryCacheManager cacheManager, UserRepository userRepository)
+    MemoryCacheManager cacheManager, UserRepository userRepository,
+    IMemoryCache memoryCache)
 {
     private readonly IUnitOfWork _unitOfWork = unitOfWork;
     
@@ -20,17 +22,47 @@ public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager,
     private readonly MemoryCacheManager _cacheManager = cacheManager;
     
     private readonly UserRepository _userRepository = userRepository;
+    
+    private readonly IMemoryCache _memoryCache = memoryCache;
 
+    private const string Key = "users";
+    
     public async Task<List<UserDto>> GetAllUsers()
     {
+        var dtos = _cacheManager.GetDtos(Key);
+
+        if (dtos is not null)
+        {
+            return (List<UserDto>)dtos;
+        }
+        
         var users = await _unitOfWork.UserRepository.GetAllUsers();
 
+        await Set();
+        
         return users.ParseToDtos();
     }
 
     public async Task<UserDto> GetUsrById(Guid userId)
     {
+        var dtos = _cacheManager.GetDtos(Key);
+
+        if (dtos is not null)
+        {
+            List<UserDto> users = (List<UserDto>)dtos;
+            
+            var userDto = users.SingleOrDefault( x => x.Id == userId);
+
+            if (userDto is null)
+                throw new UserNotFoundException();
+
+            return userDto;
+        }
+
         var user = await _unitOfWork.UserRepository.GetUserById(userId);
+
+        await Set();
+        
         return user.ParseToDto();
     }
 
@@ -107,8 +139,8 @@ public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager,
         var data = Helpers.StaticHelper.GetData(file);
         
         user.PhotoData = data;
-        
-        await _unitOfWork.UserRepository.UpdateUser(user);
+
+        await Set();
         
         return data;
 
@@ -206,5 +238,4 @@ public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager,
             throw new UserExsitException();
     }
     
-    private const string Key = "users";
 }     
