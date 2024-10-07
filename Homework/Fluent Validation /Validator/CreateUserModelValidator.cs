@@ -12,14 +12,14 @@ public class CreateUserModelValidator : AbstractValidator<CreateUserModel>
             .NotEmpty().WithMessage("Ism bo'sh bo'lishi mumkin emas")
             .MinimumLength(3).WithMessage("Ism kamida 3 ta harfdan iborat bo'lishi kerak")
             .MaximumLength(16).WithMessage("Ism 16 ta harfdan oshmasligi kerak")
-            .Matches("^[A-Z]").WithMessage("Ism katta harf bilan boshlanishi kerak");
+            .Matches("[A-Z]").WithMessage("Ism katta harf bilan boshlanishi kerak");
 
         // Lastname 
         RuleFor(x => x.Lastname)
             .NotEmpty().WithMessage("Familiya bo'sh bo'lishi mumkin emas")
             .MinimumLength(2).WithMessage("Familiya kamida 2 ta harfdan iborat bo'lishi kerak")
             .MaximumLength(16).WithMessage("Familiya 16 ta harfdan oshmasligi kerak")
-            .Matches("^[A-Z]").WithMessage("Familiya katta harf bilan boshlanishi kerak");
+            .Matches("[A-Z]").WithMessage("Familiya katta harf bilan boshlanishi kerak");
 
         // Username 
         RuleFor(x => x.Username)
