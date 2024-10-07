@@ -16,6 +16,8 @@ namespace Chat.Api.Controllers
         
         private readonly UserHelper userHelper = userHelper;
 
+        private Guid UserId = userHelper.GetUserId();
+
        [Authorize(Roles = "admin,user")]
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
@@ -30,7 +32,7 @@ namespace Chat.Api.Controllers
         {
             try
             {
-                var user = await _userManager.GetUsrById(userHelper.GetUserId());
+                var user = await _userManager.GetUsrById(UserId);
                 return Ok(user);
             }
             catch (UserNotFoundException e)
@@ -68,7 +70,7 @@ namespace Chat.Api.Controllers
         [HttpPost("add-or-update-photo")]
         public async Task<IActionResult> AddOrUpdatePhoto([FromForm] FileClass model)
         {
-            var result = await _userManager.AddOrUpdatePhoto(userHelper.GetUserId(),model.file);
+            var result = await _userManager.AddOrUpdatePhoto(UserId,model.file);
             return Ok(result);
         }
         
@@ -76,7 +78,7 @@ namespace Chat.Api.Controllers
         [HttpPost("update-bio")]
         public async Task<IActionResult> UpdateBio([FromBody] string bio) 
         {
-            var result = await _userManager.UpdateBio(userHelper.GetUserId(), bio);
+            var result = await _userManager.UpdateBio(UserId, bio);
             return Ok(result);
 
         }
@@ -87,7 +89,9 @@ namespace Chat.Api.Controllers
         {
             try
             {
-                var result = await _userManager.UpdateUserGeneralInfo(userHelper.GetUserId(), info);
+                var result = await _userManager.
+                    UpdateUserGeneralInfo(UserId, info);
+              
                 return Ok(result);
             }
             catch (Exception e)
@@ -103,7 +107,7 @@ namespace Chat.Api.Controllers
         {
             try
             {
-                var result = await _userManager.UpdateUsername(userHelper.GetUserId(), model);
+                var result = await _userManager.UpdateUsername(UserId, model);
                 return Ok(result);
             }
             catch (Exception e)

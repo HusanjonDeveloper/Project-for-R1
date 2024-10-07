@@ -27,7 +27,12 @@ public class UserRepository(ChatDbContext context) : IUserRepository
 
     public async Task<User?> GetUserByUsername(string username)
     {
-        var user = await _context.Users.SingleOrDefaultAsync(x => x.UserName == username);
+        var user = await _context.Users.SingleOrDefaultAsync(x 
+            => x.UserName.ToLower() == username.ToLower());
+        
+        // Example from database =>  example
+        // exaMple  from user => example
+        
         return user;
 
     }
