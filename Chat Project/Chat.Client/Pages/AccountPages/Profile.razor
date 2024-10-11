@@ -1,62 +1,66 @@
-@page "/account/profile"
-@using Microsoft.AspNetCore.Authorization
-@inherits  Chat.Client.Pages.AccountPages.ProfileBaseRazor
+﻿@page "/account/profile"
+@inherits ProfileBase
 @attribute [Authorize]
 
+
+
+
 <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-
     <div class="card p-4">
-        <div class=" image d-flex flex-column justify-content-center align-items-center">
+        
+        
 
-            <button class="btn btn-secondary">
-                <img src="@ImgUrl" height="100" width="100"/></button>
-            <span class="name mt-3">@User?.FirstName @User?.LastName</span>
-            <span class="idd">UserName : @User?.Username</span>
+        <div class=" image d-flex flex-column justify-content-center align-items-center">
+            <button class="btn btn-secondary"> <img src="@ImgUrl" height="100" width="100"/></button> 
+            <span class="name mt-3">@User?.FirstName @User?.LastName</span> 
+            <span class="idd">Username : @User?.Username</span>
             <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-                <span class="idd1">user_id : @User?.Id</span>
-                <span><i class="fa fa-copy"></i></span>
+                <span class="idd1">user_id : @User?.Id</span> <span><i class="fa fa-copy"></i></span>
             </div>
             <div class="d-flex flex-row justify-content-center align-items-center mt-3">
-                <span class="number">1069
-                    <span class="follow">Followers</span></span>
+                <span class="number">1069 <span class="follow">Followers</span></span>
             </div>
-            <div class=" d-flex mt-2"> <button class="btn1 btn-dark">Edit Profile</button>
-            </div>
+            <div class=" d-flex mt-2"> <button class="btn1 btn-dark">Edit Profile</button> </div>
             <div class="text mt-3">
+
                 <span>
+                    
                     @if (string.IsNullOrEmpty(User?.Bio))
                     {
-                    <InputTextArea DisplayName="Enter Bio" @bind-Value="@Bio"></InputTextArea>
+                        <InputTextArea DisplayName="Enter bio" @bind-Value="@Bio"></InputTextArea>
                         <button type="submit" @onclick="UpdateBio">Add Bio</button>
                     }
                     else
                     {
-                    <span>@User.Bio</span>
-                        <InputTextArea DisplayName="Enter Bio" @bind-Value="@Bio"></InputTextArea>
+                        <span>@User.Bio</span>
+                        <InputTextArea DisplayName="Enter bio" @bind-Value="@Bio"></InputTextArea>
                         <button type="submit" @onclick="UpdateBio">Update Bio</button>
                     }
+
                 </span>
             </div>
             <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
                 @if (User?.Age == null)
                 {
-                <label>Enter your age</label>
-                <input type="number" @bind="Age"/>
-                <button type="submit" @onclick="UpdateAge">Add age</button>
+                    <label>Enter your age</label>
+                    <input type="number" @bind="Age"/>
+                    <button  type="submit" @onclick="UpdateAge">Add age</button>
                 }
                 else
                 {
-                <p>Age: @User?.Age</p>
-                <input type="number" @bind="Age"/>
-                <button type="submit" @onclick="UpdateAge">update age</button>
+                    <p>Age: @User?.Age</p>
+                    <br/>
+                    <input  type="number" @bind="Age" />
+                    <button  type="submit" @onclick="UpdateAge">Update age</button>
                 }
-
+                
+                
             </div>
-            <div class=" px-2 rounded mt-4 date "> <span class="join">Joined @User?.CreatedDateTime.ToString("f")</span>
-            </div>
+            <div class=" px-2 rounded mt-4 date "> <span class="join">Joined @User?.CreatedDateTime.ToString("M/d/yy")</span> </div>
         </div>
     </div>
 </div>
+
 
 <style>
     * {

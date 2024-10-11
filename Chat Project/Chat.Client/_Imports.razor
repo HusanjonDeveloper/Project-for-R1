@@ -8,3 +8,17 @@
 @using Microsoft.JSInterop
 @using Chat.Client
 @using Chat.Client.Layout
+@using Microsoft.AspNetCore.Components.Authorization
+
+@using Microsoft.AspNetCore.Authorization
+
+@using System.Net
+@using Chat.Client.Models
+@using Chat.Client.Repositories.Contracts
+@using Chat.Client.Services
+
+
+@inject HttpClient Client
+@inject NavigationManager NavigationManager
+@inject IUserIntegration UserIntegration
+@inject StorageService StorageService

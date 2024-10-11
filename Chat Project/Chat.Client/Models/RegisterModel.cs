@@ -1,8 +1,11 @@
+﻿using System.ComponentModel.DataAnnotations;
+
 namespace Chat.Client.Models;
 
 public class RegisterModel
 {
-     
+
+
     //[Required]
     public string FirstName { get; set; }
 

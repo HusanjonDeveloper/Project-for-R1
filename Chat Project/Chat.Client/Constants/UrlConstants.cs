@@ -1,4 +1,4 @@
-namespace Chat.Client.Constants;
+﻿namespace Chat.Client.Constants;
 
 public static class UrlConstants
 {

@@ -1,136 +1,134 @@
+﻿using Chat.Api.Exceptions;
+using Chat.Api.Helpers;
+using Chat.Api.Managers;
+using Chat.Api.Models.UserModels;
+using Chat.Api.Validators;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
 namespace Chat.Api.Controllers;
 
-
-namespace Chat.Api.Controllers
+[Route("api/[controller]")]
+[ApiController]
+public class UsersController(UserManager userManager, UserHelper userHelper) : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class UsersController(UserManager userManager, UserHelper userHelper) : ControllerBase
+    private readonly UserManager _userManager = userManager;
+    private readonly UserHelper _userHelper = userHelper;
+    private Guid UserId => _userHelper.GetUserId();
+
+
+    [Authorize(Roles = "admin,user")]
+    [HttpGet]
+    public async Task<IActionResult> GetAllUsers()
     {
-        private readonly UserManager _userManager = userManager;
-        
-        private readonly UserHelper userHelper = userHelper;
+        var users = await _userManager.GetAllUsers();
+        return Ok(users);
+    }
 
-        private Guid UserId = userHelper.GetUserId();
-
-       [Authorize(Roles = "admin,user")]
-        [HttpGet]
-        public async Task<IActionResult> GetAllUsers()
+    [Authorize(Roles = "admin,user")]
+    [HttpGet("profile")]
+    public async Task<IActionResult> GetAllUserById()
+    {
+        try
         {
-            var user = await _userManager.GetAllUsers();
+            var user = await _userManager.GetUserById(UserId);
             return Ok(user);
         }
-
-        [Authorize(Roles = "admin,user")]
-        [HttpGet("profile")]
-        public async Task<IActionResult> GetUserById()
+        catch (UserNotFoundException e)
         {
-            try
-            {
-                var user = await _userManager.GetUsrById(UserId);
-                return Ok(user);
-            }
-            catch (UserNotFoundException e)
-            {
-                return NotFound();
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            return NotFound();
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
+
+    [HttpPost("register")]
+    public async Task<IActionResult> Register([FromBody] CreateUserModel model)
+    {
+        var validator = new CreateUserValidator();
+
+        var state = await validator.ValidateAsync(model);
+
+        if (!state.IsValid)
+        {
+            return BadRequest(state.Errors);
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] CreateUserModel model)
+        var result = await _userManager.Register(model);
+        return Ok(result);
+    }
+
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginModel model)
+    {try
         {
-            var result = await _userManager.Register(model);
+
+            var result = await _userManager.Login(model);
             return Ok(result);
         }
-
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginModel model)
+        catch (Exception e)
         {
-            try
-            {
-                var result = await _userManager.Login(model);
-                return Ok(result);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            return BadRequest(e.Message);
         }
+    }
 
-        [Authorize]
-        [HttpPost("add-or-update-photo")]
-        public async Task<IActionResult> AddOrUpdatePhoto([FromForm] FileClass model)
+    [Authorize(Roles ="admin,user")]
+    [HttpPost("add-or-update-photo")]
+    public async Task<IActionResult> AddOrUpdateUserPhoto([FromForm] FileClass model)
+    {
+        var result = await _userManager.AddOrUpdatePhoto(UserId, model.File);
+        return Ok(result);
+    }
+
+
+    [Authorize(Roles = "admin,user")]
+    [HttpPost("update-bio")]
+    public async Task<IActionResult> UpdateBio([FromBody] string bio) 
+    {
+        var result = await _userManager.UpdateBio(_userHelper.GetUserId(), bio);
+        return Ok(result);
+
+    }
+
+    [Authorize(Roles = "admin,user")]
+    [HttpPost("update-user-general-info")]
+    public async Task<IActionResult> UpdateUserGeneralInfo([FromBody] UpdateUserGeneralInfo info)
+    {
+        try
         {
-            var result = await _userManager.AddOrUpdatePhoto(UserId,model.file);
+            var result = await _userManager.UpdateUserGeneralInfo(UserId, info);
             return Ok(result);
         }
-        
-        [Authorize(Roles = "admin,user")]
-        [HttpPost("update-bio")]
-        public async Task<IActionResult> UpdateBio([FromBody] string bio) 
+        catch (Exception e)
         {
-            var result = await _userManager.UpdateBio(UserId, bio);
+            return BadRequest(e.Message);
+        }
+    }
+
+    [Authorize(Roles = "admin,user")]
+    [HttpPost("update-username")]
+    public async Task<IActionResult> UpdateUsername([FromBody] UpdateUsernameModel model)
+    {
+        try
+        {
+            var result = await _userManager.UpdateUsername(UserId, model);
             return Ok(result);
-
         }
-        
-        [Authorize(Roles = "admin,user")]
-        [HttpPost("update-user-general-info")]
-        public async Task<IActionResult> UpdateUserGeneralInfo([FromBody] UpdateUserGeneralInfo info)
+        catch (Exception e)
         {
-            try
-            {
-                var result = await _userManager.
-                    UpdateUserGeneralInfo(UserId, info);
-              
-                return Ok(result);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+            return BadRequest(e.Message);
         }
-        
-        
-        [Authorize(Roles = "admin,user")]
-        [HttpPost("update-username")]
-        public async Task<IActionResult> UpdateUsername([FromBody] UpdateUsernameModel model)
-        {
-            try
-            {
-                var result = await _userManager.UpdateUsername(UserId, model);
-                return Ok(result);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-
-
-        
     }
     
+    
+
 }
 
 public class FileClass
 {
-    public  IFormFile file { get; set; }
+    public IFormFile File { get; set; }
 }
 
-
-/*
- photo file string xoaltda kelishi misol uchun 
-public class PhotoClass
-{
-    public  string Name { get; set; }
-
-    public  string Description { get; set; }
-
-    public  IFormFile file { get; set; }
-}
-*/

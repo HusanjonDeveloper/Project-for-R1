@@ -1,3 +1,5 @@
-namespace Chat.Api.Exceptions;
+﻿namespace Chat.Api.Exceptions;
 
-public class ChatNotFoundException (): Exception("Chat not found");
+public class ChatNotFoundException():Exception("Chat not found")
+{
+}

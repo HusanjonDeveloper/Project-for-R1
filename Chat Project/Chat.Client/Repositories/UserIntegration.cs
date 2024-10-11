@@ -1,5 +1,14 @@
-namespace Chat.Client.Repositories;
+﻿using System.Net;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Reflection;
+using Blazored.LocalStorage;
+using Chat.Client.DTOs;
+using Chat.Client.Models;
+using Chat.Client.Repositories.Contracts;
+using Chat.Client.Services;
 
+namespace Chat.Client.Repositories;
 
 public class UserIntegration(HttpClient httpClient, ILocalStorageService localStorageService, StorageService storageService) : IUserIntegration
 {
@@ -71,33 +80,36 @@ public class UserIntegration(HttpClient httpClient, ILocalStorageService localSt
         return new(statusCode, "Something wrong");
     }
 
-    public async Task<Tuple<HttpStatusCode, object?>> GetProfile(byte age)
+    public async Task<Tuple<HttpStatusCode, object?>> GetProfile()
     {
         await AddTokenToHeader();
-        
-       var url = "api/users/profile";
-       var result = await _httpClient.GetAsync(url);
-       
-       var statusCode = result.StatusCode;
 
-       object? response;
+        var url = "api/users/profile";
 
-       if (statusCode == HttpStatusCode.OK)
-       {
-           response = await result.Content.ReadFromJsonAsync<UserDto>();
-       }
-       else
-       {
-           response = await result.Content.ReadFromJsonAsync<string>();
-       }
-       
-       return new (statusCode, response);
+        var result = await _httpClient.GetAsync(url);
+
+        var statusCode = result.StatusCode;
+
+        object? response;
+
+        if (statusCode == HttpStatusCode.OK)
+        {
+            response = await result.Content.ReadFromJsonAsync<UserDto>();
+        }
+        else
+        {
+            response = await result.Content.ReadFromJsonAsync<string>();
+        }
+
+
+        return new(statusCode,response);
 
     }
 
     public async Task<Tuple<HttpStatusCode, object?>> UpdateAge(byte age)
     {
-        var url = "api/users/update-user-general-info";
+        var url = "api/Users/update-user-general-info";
+
         await AddTokenToHeader();
 
         var model = new UpdateUserGeneralInfo()
@@ -105,32 +117,38 @@ public class UserIntegration(HttpClient httpClient, ILocalStorageService localSt
             Age = age.ToString()
         };
 
-        var rresult = await _httpClient.PostAsJsonAsync(url, model);
-        
-        var statusCode = rresult.StatusCode;
+        var result = await _httpClient.PostAsJsonAsync(url, model);
 
-        object response = rresult.Content.ReadFromJsonAsync<object>();
-        
-        return new (statusCode, response);
+
+        var statusCode = result.StatusCode;
+
+        object response =  result.Content.ReadFromJsonAsync<object>();
+
+        return new(statusCode, response);
+
     }
 
-    public async Task<Tuple<HttpStatusCode, object?>> UpdateBio(string bio)
+    public async Task<Tuple<HttpStatusCode, object>> UpdateBio(string bio)
     {
-        var url = "api/users/update-bio";
-        await AddTokenToHeader();
-        
-        var rresult = await _httpClient.PostAsJsonAsync(url, bio);
-        
-        var statusCode = rresult.StatusCode;
+        var url = "api/Users/update-bio";
 
-        object response = rresult.Content.ReadFromJsonAsync<object>();
-        
-        return new (statusCode, response);
+        await AddTokenToHeader();
+
+
+        var result = await _httpClient.PostAsJsonAsync(url, bio);
+
+
+        var statusCode = result.StatusCode;
+
+        object response = result.Content.ReadFromJsonAsync<object>();
+
+        return new(statusCode, response);
     }
+
 
     private async Task AddTokenToHeader()
     {
-        
+
         string? token = await _storageService.GetToken();
 
         if (!string.IsNullOrEmpty(token))

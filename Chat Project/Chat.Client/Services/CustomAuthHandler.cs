@@ -1,5 +1,8 @@
-namespace Chat.Client.Services;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Components.Authorization;
 
+namespace Chat.Client.Services;
 
 public class CustomAuthHandler(StorageService storageService) : AuthenticationStateProvider
 {
@@ -32,7 +35,7 @@ public class CustomAuthHandler(StorageService storageService) : AuthenticationSt
                 new Claim(ClaimTypes.Name,username!),
                 new Claim(ClaimTypes.Role,role!)
             },authenticationType:"JwtAuth"
-        ));
+            ));
 
         return claimsPrincipal;
     }
