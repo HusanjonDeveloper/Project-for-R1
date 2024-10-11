@@ -84,6 +84,15 @@ public class UserManager( IUnitOfWork unitOfWork, JwtManager jwtManager,
              user.Role = UserConstants.UserRole;
          }
         
+         // for any logics 
+         
+         /*
+          *if(user.FirstName == " ")
+          * {
+          * user.Role == UserConstants.AdminRole;
+          */
+         
+         
         var passwordHash = new PasswordHasher<User>()
                                 .HashPassword(user, model.Password);
                            

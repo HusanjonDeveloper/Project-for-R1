@@ -17,7 +17,7 @@ public class ChatDbContext(DbContextOptions<ChatDbContext> options) : DbContext(
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        var password = "admin";
+        var password = "admin";   
         
        var user =  new User()
        {
@@ -35,7 +35,7 @@ public class ChatDbContext(DbContextOptions<ChatDbContext> options) : DbContext(
         // seed data 
         modelBuilder.Entity<User>().HasData( new List<User>()
         {
-            
+            user
         });
     }
 }
