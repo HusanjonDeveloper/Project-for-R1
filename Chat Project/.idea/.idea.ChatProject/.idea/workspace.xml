@@ -10,11 +10,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="">
+    <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="Manager.NavigateTo">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Migrations/ChatDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Migrations/ChatDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chat.Client/Pages/AccountPages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Client/Pages/AccountPages/Login.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +144,7 @@
       <updated>1728644366983</updated>
       <workItem from="1728644368021" duration="4329000" />
       <workItem from="1728648821303" duration="13240000" />
-      <workItem from="1728727632121" duration="3977000" />
+      <workItem from="1728727632121" duration="4611000" />
     </task>
     <task id="LOCAL-00001" summary="Code Rub All code">
       <option name="closed" value="true" />
@@ -189,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728648879361</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Manager.NavigateTo">
+      <option name="closed" value="true" />
+      <created>1728731993678</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728731993678</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +210,7 @@
     <MESSAGE value="Chat Application File" />
     <MESSAGE value="Code Rub All Code" />
     <MESSAGE value="s" />
-    <option name="LAST_COMMIT_MESSAGE" value="s" />
+    <MESSAGE value="Manager.NavigateTo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Manager.NavigateTo" />
   </component>
 </project>

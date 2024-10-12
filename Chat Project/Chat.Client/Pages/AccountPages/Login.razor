@@ -42,8 +42,19 @@
 
         var statusCode = result.StatusCode;
 
-        var token = result.Content.ReadFromJsonAsync<string>();
+        bool  isOk = statusCode == HttpStatusCode.OK;
         
-        Manager.NavigateTo( $"/login-successfully/{token}");
+        bool isBadRequest = statusCode == HttpStatusCode.BadRequest;
+
+        var response = await result.Content.ReadAsStringAsync();
+
+        if (isOk)
+        {
+            Manager.NavigateTo( $"/login-successfully/{response}");
+        }
+        else if(isBadRequest)
+        {
+            Manager.NavigateTo( $"/error/{response}");
+        }
     }
 }
