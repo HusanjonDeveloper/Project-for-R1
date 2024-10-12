@@ -1,5 +1,7 @@
 ﻿@page "/account/login"
 @inherits LoginBase
+@inject HttpClient Client
+@inject  NavigationManager  Manager
 
 
 <AuthorizeView>
@@ -10,28 +12,38 @@
     </Authorized>
     <NotAuthorized>
         <h3>Login</h3>
-
-        <div>
-            <label>Username</label>
-            <InputText @bind-Value="@Model.Username"></InputText>
-        </div>
-        <br/>
-        <div>
-            <label>Password</label>
-            <InputText @bind-Value="@Model.Password"></InputText>
-        </div>
+        <form>
+            <div>
+                <label>Username</label>
+                <InputText @bind-Value="@Model.Username"></InputText>
+            </div>
+            <br/>
+            <div>
+                <label>Password</label>
+                <InputText @bind-Value="@Model.Password"></InputText>
+            </div>
     
-        <button type="submit" class="btn btn-primary" @onclick="LoginClicked">Login</button>
-    </NotAuthorized>
+            <button type="submit" class="btn btn-primary" @onclick="LoginClicked">Login</button>
+        </form>
+        </NotAuthorized>
 </AuthorizeView>
 
 
-
-
-
-
 @code {
+    private LoginModel Model = new();
     
+    private string? Token { get; set; }
 
+    private async void LoginClicked()
+    {
+        string url = "http://localhost:5068/api/User/login";
+
+        var result = await Client.PostAsJsonAsync(url,Model);
+
+        var statusCode = result.StatusCode;
+
+        var token = result.Content.ReadFromJsonAsync<string>();
+        
+        Manager.NavigateTo( $"/login-successfully/{token}");
+    }
 }
-

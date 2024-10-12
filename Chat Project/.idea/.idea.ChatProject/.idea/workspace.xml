@@ -11,57 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Chat Application" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Chat.Api.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Constants/UserConstants.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Context/ChatDbContext.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Controllers/ChatsController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Controllers/MessagesController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Controllers/UsersController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/DTOs/ChatDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/DTOs/ContentDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/DTOs/MessageDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/DTOs/UserChatDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/DTOs/UserDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Entities/Chat.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Entities/Content.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Entities/Message.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Entities/User.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Entities/UserChat.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Exceptions/ChatNotFoundException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Exceptions/GetMessageNotfoundException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Exceptions/NotPhotoType.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Exceptions/UserExsitException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Exceptions/UserNotFoundException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Extensions/ParseToDtoExtension.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Helpers/JwtParameters.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Helpers/StaticHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Helpers/UserHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Manager/ChatManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Manager/JwtManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Manager/MemoryCacheManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Manager/MessageManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Manager/UserManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Model/FileModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Model/TextModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Model/UserModels/CreateUserModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Model/UserModels/LoginModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Model/UserModels/UpdateUserGeneralInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Model/UserModels/UpdateUsernameModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Repositories/ChatRepositoriy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Repositories/IChatRepositoriy.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Repositories/IMessageRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Repositories/IUnitOfWork.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Repositories/IUserChatRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Repositories/IUserRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Repositories/MessageRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Repositories/UnitOfWork.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Repositories/UserChatRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Repositories/UserRepository.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat.Api/Migrations/ChatDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Migrations/ChatDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat.Client/Pages/AccountPages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Client/Pages/AccountPages/Login.razor" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,22 +36,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "HusanjonDeveloper"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HusanjonDeveloper&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/HusanjonDeveloper/Project-for-R1.git",
-    "accountId": "04652239-e669-4001-b76d-ff758ba50577"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/HusanjonDeveloper/Project-for-R1.git&quot;,
+    &quot;accountId&quot;: &quot;04652239-e669-4001-b76d-ff758ba50577&quot;
   }
-}]]></component>
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2nHybRxa3YlLMxOYS7maE54N81o" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -106,20 +60,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Chat.Client: http.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Chat.Api: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.Chat.Client: http.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Chat.Client: http">
     <configuration name="Chat.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Chat.Api/Chat.Api.csproj" />
@@ -191,6 +146,8 @@
       <option name="presentableId" value="Default" />
       <updated>1728644366983</updated>
       <workItem from="1728644368021" duration="4329000" />
+      <workItem from="1728648821303" duration="13240000" />
+      <workItem from="1728727632121" duration="3977000" />
     </task>
     <task id="LOCAL-00001" summary="Code Rub All code">
       <option name="closed" value="true" />
@@ -216,7 +173,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728648243681</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Code Rub All Code">
+      <option name="closed" value="true" />
+      <created>1728648857204</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728648857204</updated>
+    </task>
+    <task id="LOCAL-00005" summary="s">
+      <option name="closed" value="true" />
+      <created>1728648879361</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728648879361</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +203,8 @@
     <MESSAGE value="Code Rub All code" />
     <MESSAGE value="Cd" />
     <MESSAGE value="Chat Application File" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chat Application File" />
+    <MESSAGE value="Code Rub All Code" />
+    <MESSAGE value="s" />
+    <option name="LAST_COMMIT_MESSAGE" value="s" />
   </component>
 </project>
