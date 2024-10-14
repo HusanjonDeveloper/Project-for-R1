@@ -146,11 +146,11 @@ namespace Chat.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("80b04498-b713-4fea-b804-75ede70a3edb"),
+                            Id = new Guid("4c950807-5d76-4ce1-905b-fb7f667861d3"),
                             FirstName = "Admin",
                             Gender = "male",
                             LastName = "Admin",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJzV+1Y4vCI8ISwqGH5L9dmY1KQFJE1ynP6DSFj4pjieFsd1ZChVKr4gJujOIw3sNA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAhHfbJg4CO2j19gh4UXogG55ueMqmk/JQbMJQdPZzzVt2LRFpU+otbVdgzveluxaw==",
                             Role = "admin",
                             Username = "admin"
                         });

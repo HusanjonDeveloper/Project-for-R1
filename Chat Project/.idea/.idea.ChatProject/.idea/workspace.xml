@@ -10,9 +10,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="Manager.NavigateTo">
+    <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Client/Pages/AccountPages/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Client/Pages/AccountPages/Login.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat.Api/Migrations/ChatDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Migrations/ChatDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,22 +58,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Chat.Api: http.executor&quot;: &quot;Run&quot;,
-    &quot;.NET Launch Settings Profile.Chat.Client: http.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Chat.Api: http.executor": "Run",
+    ".NET Launch Settings Profile.Chat.Api: https.executor": "Run",
+    ".NET Launch Settings Profile.Chat.Client: http.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Chat.Client: http">
+}]]></component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.Chat.Api: https">
     <configuration name="Chat.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Chat.Api/Chat.Api.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -144,7 +146,7 @@
       <updated>1728644366983</updated>
       <workItem from="1728644368021" duration="4329000" />
       <workItem from="1728648821303" duration="13240000" />
-      <workItem from="1728727632121" duration="4611000" />
+      <workItem from="1728727632121" duration="9559000" />
     </task>
     <task id="LOCAL-00001" summary="Code Rub All code">
       <option name="closed" value="true" />
@@ -194,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728731993678</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="$&quot;/error/{response}&quot;">
+      <option name="closed" value="true" />
+      <created>1728732722702</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728732722702</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +221,7 @@
     <MESSAGE value="Code Rub All Code" />
     <MESSAGE value="s" />
     <MESSAGE value="Manager.NavigateTo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Manager.NavigateTo" />
+    <MESSAGE value="$&quot;/error/{response}&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="$&quot;/error/{response}&quot;" />
   </component>
 </project>
