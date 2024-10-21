@@ -8,3 +8,7 @@ http://localhost:5068/swagger/index.html
 ![Screenshot 2024-10-11 at 22 37 37](https://github.com/user-attachments/assets/42f4bccb-9c10-4a6f-abd4-d8db0d7a22d4)
 
 
+![Screenshot 2024-10-21 at 22 55 30](https://github.com/user-attachments/assets/0e2196b8-ce1c-41b0-87e1-95b6178b86c2)
+
+
+![image](https://github.com/user-attachments/assets/9bc2b3a8-fbc9-4bcb-a041-5c352f3f9333)
