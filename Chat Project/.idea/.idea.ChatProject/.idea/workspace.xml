@@ -10,9 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,6 +146,7 @@
       <workItem from="1729155874680" duration="749000" />
       <workItem from="1729169346098" duration="783000" />
       <workItem from="1729604484974" duration="159000" />
+      <workItem from="1729707584133" duration="680000" />
     </task>
     <task id="LOCAL-00001" summary="Code Rub All code">
       <option name="closed" value="true" />
