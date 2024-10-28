@@ -1,0 +1,56 @@
+SOLID prinsiplar obyektga yo‘naltirilgan dasturlashda (OOD) sinf va modullarni 
+ishonchli, kengaytirilishi oson va o‘zgarishlardan himoyalangan qilib loyihalashga
+ yordam beradi. Bu tamoyillar dasturchilarga kodni qayta ishlatish, modularizatsiya
+  va test qilishni osonlashtiradi.
+  
+  
+         2. Open-Closed Principle (OCP) – Ochiq-Yopiq tamoyil
+
+
+Ta’rif:
+
+ Sinf yoki modul yangi funksiyalar uchun ochiq, 
+lekin mavjud kodni o‘zgartirish uchun yopiq bo‘lishi kerak.
+
+Misol: 
+
+Agar hisob-kitob funksiyasini kengaytirmoqchi bo‘lsak, 
+yangi sinf yoki interfeys yaratamiz, lekin mavjud hisob-kitob sinfini o‘zgartirmaymiz.
+
+
+public interface IShape
+{
+    double Area();
+}
+
+public class Rectangle : IShape
+{
+    public double Width { get; set; }
+    public double Height { get; set; }
+
+    public double Area()
+    {
+        return Width * Height;
+    }
+}
+
+public class Circle : IShape
+{
+    public double Radius { get; set; }
+
+    public double Area()
+    {
+        return Math.PI * Radius * Radius;
+    }
+}
+
+	•	SRP – sinflarni o‘z vazifasiga mos ravishda ajrating.
+	•	OCP – yangi funksiyalarni qo‘shishda mavjud kodga zarar bermang.
+	•	LSP – bolalar sinfi asosiy sinfni almashtira olishi kerak.
+	•	ISP – yirik interfeyslarni kichik, aniq vazifalarga bo‘ling.
+	•	DIP – yuqori va past darajadagi modullar abstraktsiyaga bog‘lanishi kerak.
+
+
+
+
+
