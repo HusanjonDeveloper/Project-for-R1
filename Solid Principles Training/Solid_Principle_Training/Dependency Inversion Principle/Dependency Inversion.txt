@@ -1,0 +1,61 @@
+SOLID prinsiplar obyektga yo‘naltirilgan dasturlashda (OOD) sinf va modullarni 
+ishonchli, kengaytirilishi oson va o‘zgarishlardan himoyalangan qilib loyihalashga
+ yordam beradi. Bu tamoyillar dasturchilarga kodni qayta ishlatish, modularizatsiya
+  va test qilishni osonlashtiradi.
+  
+  
+  5. Dependency Inversion Principle (DIP) – Bog‘liqlikni in’eksiyalash tamoyili
+  
+  Ta’rif:
+   Yuqori darajadagi modullar past darajadagi modullarga bog‘liq bo‘lmasligi kerak; 
+   ikkisi ham abstraksiyaga bog‘liq bo‘lishi kerak.
+
+ Misol:
+ Ish joyidagi xizmatni yuklashni amalga oshiradigan sinfni abstrakt qilib, 
+ unga xizmat turini in’eksiya qilamiz.
+ 
+ public interface IService
+ {
+     void Serve();
+ }
+ 
+ public class EmailService : IService
+ {
+     public void Serve()
+     {
+         Console.WriteLine("Email xizmati ishlatildi.");
+     }
+ }
+ 
+ public class SMSService : IService
+ {
+     public void Serve()
+     {
+         Console.WriteLine("SMS xizmati ishlatildi.");
+     }
+ }
+ 
+ public class Client
+ {
+     private readonly IService _service;
+ 
+     public Client(IService service)
+     {
+         _service = service;
+     }
+ 
+     public void Start()
+     {
+         _service.Serve();
+     }
+ }
+ 
+ // Foydalanish
+ Client client = new Client(new EmailService());
+ client.Start();
+ 
+ 	•	SRP – sinflarni o‘z vazifasiga mos ravishda ajrating.
+ 	•	OCP – yangi funksiyalarni qo‘shishda mavjud kodga zarar bermang.
+ 	•	LSP – bolalar sinfi asosiy sinfni almashtira olishi kerak.
+ 	•	ISP – yirik interfeyslarni kichik, aniq vazifalarga bo‘ling.
+ 	•	DIP – yuqori va past darajadagi modullar abstraktsiyaga bog‘lanishi kerak.
