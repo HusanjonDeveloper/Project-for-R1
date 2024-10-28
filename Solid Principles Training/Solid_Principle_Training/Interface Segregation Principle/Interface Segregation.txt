@@ -1,0 +1,54 @@
+SOLID prinsiplar obyektga yo‘naltirilgan dasturlashda (OOD) sinf va modullarni 
+ishonchli, kengaytirilishi oson va o‘zgarishlardan himoyalangan qilib loyihalashga
+ yordam beradi. Bu tamoyillar dasturchilarga kodni qayta ishlatish, modularizatsiya
+  va test qilishni osonlashtiradi.
+  
+  
+  4. Interface Segregation Principle (ISP) – Interfeyslarni ajratish tamoyili
+  
+  
+  Ta’rif:
+  
+   Mijozlar faqat ularga kerakli bo‘lgan interfeyslarni ishlatishlari kerak;
+    yirik interfeyslar kichik, o‘ziga xos interfeyslarga bo‘linishi kerak.
+    
+    Misol:
+     Hayvonlarni ta’riflovchi interfeys yaratamiz. Barcha hayvonlar uchishi shart emas,
+      shu sababli ularni alohida interfeyslarga ajratamiz.
+      
+      public interface IAnimal
+      {
+          void Eat();
+      }
+      
+      public interface IFlyable
+      {
+          void Fly();
+      }
+      
+      public class Bird : IAnimal, IFlyable
+      {
+          public void Eat()
+          {
+              Console.WriteLine("Qush ovqatlanmoqda.");
+          }
+      
+          public void Fly()
+          {
+              Console.WriteLine("Qush uchmoqda.");
+          }
+      }
+      
+      public class Cat : IAnimal
+      {
+          public void Eat()
+          {
+              Console.WriteLine("Mushuk ovqatlanmoqda.");
+          }
+      }
+      
+  	•	SRP – sinflarni o‘z vazifasiga mos ravishda ajrating.
+  	•	OCP – yangi funksiyalarni qo‘shishda mavjud kodga zarar bermang.
+  	•	LSP – bolalar sinfi asosiy sinfni almashtira olishi kerak.
+  	•	ISP – yirik interfeyslarni kichik, aniq vazifalarga bo‘ling.
+  	•	DIP – yuqori va past darajadagi modullar abstraktsiyaga bog‘lanishi kerak.
