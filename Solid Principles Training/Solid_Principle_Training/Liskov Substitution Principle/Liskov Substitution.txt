@@ -1,0 +1,52 @@
+SOLID prinsiplar obyektga yo‘naltirilgan dasturlashda (OOD) sinf va modullarni 
+ishonchli, kengaytirilishi oson va o‘zgarishlardan himoyalangan qilib loyihalashga
+ yordam beradi. Bu tamoyillar dasturchilarga kodni qayta ishlatish, modularizatsiya
+  va test qilishni osonlashtiradi.
+  
+  
+  3. Liskov Substitution Principle (LSP) – Liskov almashinuv tamoyili
+  
+  Ta’rif: 
+  
+  Agar sinf biror joyda ishlatilayotgan bo‘lsa,
+   uning farzand sinfi ham o‘sha joyda hech qanday o‘zgarishsiz ishlashi kerak.
+  
+  
+  Misol:
+  
+   To‘g‘ri to‘rtburchak va kvadrat uchun o‘lchamni hisoblashni tashkil qilamiz.
+    Kvadrat to‘g‘ri to‘rtburchakning farzandi bo‘lib, 
+    Liskov almashinuv tamoyiliga mos keladi. 
+   
+   
+   public abstract class Shape
+   {
+       public abstract double Area();
+   }
+   
+   public class Rectangle : Shape
+   {
+       public double Width { get; set; }
+       public double Height { get; set; }
+   
+       public override double Area()
+       {
+           return Width * Height;
+       }
+   }
+   
+   public class Square : Shape
+   {
+       public double Side { get; set; }
+   
+       public override double Area()
+       {
+           return Side * Side;
+       }
+   }
+
+  	•	SRP – sinflarni o‘z vazifasiga mos ravishda ajrating.
+  	•	OCP – yangi funksiyalarni qo‘shishda mavjud kodga zarar bermang.
+  	•	LSP – bolalar sinfi asosiy sinfni almashtira olishi kerak.
+  	•	ISP – yirik interfeyslarni kichik, aniq vazifalarga bo‘ling.
+  	•	DIP – yuqori va past darajadagi modullar abstraktsiyaga bog‘lanishi kerak.
