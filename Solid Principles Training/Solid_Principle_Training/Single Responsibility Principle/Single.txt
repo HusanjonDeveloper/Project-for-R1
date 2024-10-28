@@ -1,0 +1,42 @@
+SOLID prinsiplar obyektga yo‘naltirilgan dasturlashda (OOD) sinf va modullarni 
+ishonchli, kengaytirilishi oson va o‘zgarishlardan himoyalangan qilib 
+loyihalashga yordam beradi. Bu tamoyillar dasturchilarga kodni qayta 
+ishlatish, modularizatsiya va test qilishni osonlashtiradi.
+
+
+     1. Single Responsibility Principle (SRP) – Yagona mas’uliyat tamoyili
+
+
+Ta’rif:
+ Har bir sinf yoki modul faqat bitta sabab tufayli o‘zgarishi
+ kerak, ya’ni faqat bitta mas’uliyatni bajarishi kerak.
+ 
+ 
+ Misol:
+  Foydalanuvchi ma’lumotlarini saqlash va uni ma’lumotlar
+  bazasiga yozish logikasini alohida sinflarga ajratish kerak.
+  
+  
+  // User klassi faqat foydalanuvchi haqida ma'lumot saqlaydi
+  public class User
+  {
+      public string Name { get; set; }
+      public string Email { get; set; }
+  }
+  
+  // UserRepository faqat ma'lumotlarni saqlash uchun mas'ul
+  public class UserRepository
+  {
+      public void Save(User user)
+      {
+          // ma'lumotlar bazasiga saqlash jarayoni
+          Console.WriteLine($"{user.Name} saqlandi.");
+      }
+  }
+  
+  
+  	•	SRP – sinflarni o‘z vazifasiga mos ravishda ajrating.
+  	•	OCP – yangi funksiyalarni qo‘shishda mavjud kodga zarar bermang.
+  	•	LSP – bolalar sinfi asosiy sinfni almashtira olishi kerak.
+  	•	ISP – yirik interfeyslarni kichik, aniq vazifalarga bo‘ling.
+  	•	DIP – yuqori va past darajadagi modullar abstraktsiyaga bog‘lanishi kerak.
