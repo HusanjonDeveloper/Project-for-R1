@@ -5,7 +5,9 @@
     <projectFile profileName="https">Services.Api/Services.Api.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2c1fc9b-42cd-40b6-b516-abc1c74b3ce9" name="Changes" comment="" />
+    <list default="true" id="f2c1fc9b-42cd-40b6-b516-abc1c74b3ce9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.Project-for-R1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.Project-for-R1/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,35 +16,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "HusanjonDeveloper"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HusanjonDeveloper&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/HusanjonDeveloper/Project-for-R1.git",
-    "accountId": "04652239-e669-4001-b76d-ff758ba50577"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/HusanjonDeveloper/Project-for-R1.git&quot;,
+    &quot;accountId&quot;: &quot;04652239-e669-4001-b76d-ff758ba50577&quot;
   }
-}]]></component>
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2mr6Xs0IFrYZgxr0V1555extMPP" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Services.Api: http">
     <configuration name="Services.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Services.Api/Services.Api.csproj" />
@@ -84,6 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1727822390769</updated>
       <workItem from="1727822391864" duration="4000" />
+      <workItem from="1730382155168" duration="3000" />
     </task>
     <servers />
   </component>

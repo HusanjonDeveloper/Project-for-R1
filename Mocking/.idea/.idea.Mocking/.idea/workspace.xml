@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a928bb41-15a2-44a2-b225-c569af116741" name="Changes" comment="" />
+    <list default="true" id="a928bb41-15a2-44a2-b225-c569af116741" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.Project-for-R1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.Project-for-R1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CustomTests/.idea/.idea.CustomTests/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomTests/.idea/.idea.CustomTests/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FluentValidation/.idea/.idea.FluentValidation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FluentValidation/.idea/.idea.FluentValidation/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,35 +14,35 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "HusanjonDeveloper"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HusanjonDeveloper&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/HusanjonDeveloper/Project-for-R1.git",
-    "accountId": "04652239-e669-4001-b76d-ff758ba50577"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/HusanjonDeveloper/Project-for-R1.git&quot;,
+    &quot;accountId&quot;: &quot;04652239-e669-4001-b76d-ff758ba50577&quot;
   }
-}]]></component>
+}</component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2mr6Zi6GQ6sN6JGRz4h3JVv3dnM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,6 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1727822404946</updated>
       <workItem from="1727822405969" duration="4000" />
+      <workItem from="1730382197655" duration="2000" />
     </task>
     <servers />
   </component>
