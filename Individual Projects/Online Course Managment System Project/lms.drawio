@@ -1,0 +1,118 @@
+<mxfile host="65bd71144e">
+    <diagram id="nkdpxr8nzvu4SDbBTWq2" name="Page-1">
+        <mxGraphModel dx="1709" dy="496" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="50" value="User" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="380" width="220" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="1. Guid Id&#10;2. string FullName&#10;3. string PhoneNumber&#10;4. string PasswordHash&#10;5. string Role &#10;6. DateTime CreatedAt  &#10;7. List&lt;User_Course&gt; UserCourse&#10;8. List&lt;Payment&gt; Payments&#10;9. List&lt;CourseReports&gt; CourseReports" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="50" vertex="1">
+                    <mxGeometry y="30" width="220" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Course" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="460" width="220" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="1. Guid Id&#10;2. string Title&#10;3. string Description&#10;4. decimal Price&#10;6. List&lt;Lesson&gt; lessons&#10;7. List&lt;User_Courses&gt; Users&#10;8. List&lt;Paymnet&gt; Payments&#10;9. List&lt;CourseReport&gt; CourseReports" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="53" vertex="1">
+                    <mxGeometry y="30" width="220" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="User_Course_Payment" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="570" y="790" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="1. Guid Id&#10;2. Guid UserId&#10;3. Guid CourseId&#10;4. decimal Amount&#10;5. string Status&#10;6. DateTime CreatedAt&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="56" vertex="1">
+                    <mxGeometry y="30" width="160" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="SMSVarfication" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="-420" y="150" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="1. Guid Id&#10;3. string Code&#10;4. string PhoneNumber&#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="58" vertex="1">
+                    <mxGeometry y="30" width="160" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="CardInfo" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="-280" y="390" width="160" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="1. Guid Id&#10;2. Guid UserId&#10;3. string CardNumber&#10;4. string CardHolderName&#10;5. string CVVHash&#10;6. User User&#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="60" vertex="1">
+                    <mxGeometry y="30" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="User_Course_Report" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="700" width="160" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="1. Guid Id&#10;2. Guid UserId&#10;3. Guid CourseId&#10;4. string reportMessage&#10;5. DateTime  " style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="64" vertex="1">
+                    <mxGeometry y="30" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=-0.01;entryY=0.207;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="51" target="56" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="263.03999999999996" y="414.4" as="sourcePoint"/>
+                        <mxPoint x="310" y="630" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="68" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="1" source="54" target="57" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="260" y="507.5" as="sourcePoint"/>
+                        <mxPoint x="780" y="930" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="70" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="1" source="50" target="61" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="380" y="440" as="sourcePoint"/>
+                        <mxPoint x="-120" y="413" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="72" value="Content" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="1115" y="200" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="1. Guid Id&#10;2. string GoogleDriveFileId&#10;3. string Url&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="72" vertex="1">
+                    <mxGeometry y="30" width="160" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="Lesson" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="200" width="160" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="1. Guid Id&#10;2. string Title&#10;3. string Description&#10;4. Course Course&#10;5. List&lt;Content&gt; Contents&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="75" vertex="1">
+                    <mxGeometry y="30" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="User_Course" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="150" width="160" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="1. Guid Id&#10;2. Guid UserId &#10;3. Guid CourseId&#10;4. bool IsOwner&#10;5. IsFree" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="81" vertex="1">
+                    <mxGeometry y="30" width="160" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="54" target="76" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="530" y="510" as="sourcePoint"/>
+                        <mxPoint x="740" y="520" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="88" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="51">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="260" y="525" as="sourcePoint"/>
+                        <mxPoint x="210" y="730" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="89" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="54" target="65">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="270" y="535" as="sourcePoint"/>
+                        <mxPoint x="588.4000000000001" y="843.1200000000001" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="85" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=-0.01;entryY=0.347;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="51" target="82" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="550" y="510" as="sourcePoint"/>
+                        <mxPoint x="550" y="790" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="86" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1.032;entryY=0.094;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="54" target="82" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="327.76" y="188.96000000000004" as="sourcePoint"/>
+                        <mxPoint x="240" y="430" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="90" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERzeroToOne;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="76" target="73">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="740" y="535" as="sourcePoint"/>
+                        <mxPoint x="780" y="280" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
