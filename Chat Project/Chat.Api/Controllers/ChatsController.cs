@@ -1,5 +1,4 @@
-﻿using Chat.Api.DTOs;
-using Chat.Api.Helpers;
+﻿using Chat.Api.Helpers;
 using Chat.Api.Managers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

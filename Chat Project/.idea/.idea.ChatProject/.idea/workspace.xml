@@ -11,11 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/.idea.Project-for-R1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.Project-for-R1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CustomTests/.idea/.idea.CustomTests/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomTests/.idea/.idea.CustomTests/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FluentValidation/.idea/.idea.FluentValidation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FluentValidation/.idea/.idea.FluentValidation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Mocking/.idea/.idea.Mocking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Mocking/.idea/.idea.Mocking/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat.Api/Controllers/ChatsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Controllers/ChatsController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,6 +153,8 @@
       <workItem from="1730382317100" duration="1343000" />
       <workItem from="1730507387340" duration="438000" />
       <workItem from="1730509315022" duration="661000" />
+      <workItem from="1730895944309" duration="3465000" />
+      <workItem from="1731051782162" duration="6049000" />
     </task>
     <task id="LOCAL-00001" summary="Code Rub All code">
       <option name="closed" value="true" />
@@ -213,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728732722702</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="LMS systeam task">
+      <option name="closed" value="true" />
+      <created>1730895967343</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1730895967343</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +238,7 @@
     <MESSAGE value="s" />
     <MESSAGE value="Manager.NavigateTo" />
     <MESSAGE value="$&quot;/error/{response}&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="$&quot;/error/{response}&quot;" />
+    <MESSAGE value="LMS systeam task" />
+    <option name="LAST_COMMIT_MESSAGE" value="LMS systeam task" />
   </component>
 </project>
