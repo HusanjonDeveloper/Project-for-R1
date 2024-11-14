@@ -10,19 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Api/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Api/Course.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Api/Course.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Api/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Common/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Common/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Data/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Data/Course.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Data/Course.Data.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Data/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Services/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Individual Projects/Online Course Managment System Project/Course.Services/WeatherForecast.cs" beforeDir="false" />
-    </list>
+    <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,6 +153,7 @@
       <workItem from="1730895944309" duration="3465000" />
       <workItem from="1731051782162" duration="6049000" />
       <workItem from="1731267570908" duration="1491000" />
+      <workItem from="1731512614931" duration="19000" />
     </task>
     <task id="LOCAL-00001" summary="Code Rub All code">
       <option name="closed" value="true" />
