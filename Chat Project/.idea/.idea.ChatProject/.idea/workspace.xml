@@ -10,7 +10,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="code rub">
+    <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,6 +69,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -161,7 +162,10 @@
       <workItem from="1731776532812" duration="1751000" />
       <workItem from="1731846086689" duration="600000" />
       <workItem from="1731957029560" duration="2030000" />
-      <workItem from="1732066729363" duration="1963000" />
+      <workItem from="1732066729363" duration="2962000" />
+      <workItem from="1732072573076" duration="218000" />
+      <workItem from="1732072821942" duration="1063000" />
+      <workItem from="1732147467300" duration="4958000" />
     </task>
     <task id="LOCAL-00001" summary="Code Rub All code">
       <option name="closed" value="true" />
@@ -259,7 +263,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732066754215</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Code rub">
+      <option name="closed" value="true" />
+      <created>1732071454289</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732071454289</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,8 +291,8 @@
     <MESSAGE value="$&quot;/error/{response}&quot;" />
     <MESSAGE value="LMS systeam task" />
     <MESSAGE value="Code rub all code" />
-    <MESSAGE value="Code rub" />
     <MESSAGE value="code rub" />
-    <option name="LAST_COMMIT_MESSAGE" value="code rub" />
+    <MESSAGE value="Code rub" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code rub" />
   </component>
 </project>
