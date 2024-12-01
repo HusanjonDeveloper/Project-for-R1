@@ -12,6 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat.Api/Context/ChatDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Context/ChatDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +75,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Chat.Api: https">
+  <component name="RunManager" selected=".NET Launch Settings Profile.Chat.Api: http">
     <configuration name="Chat.Api: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Chat.Api/Chat.Api.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -166,6 +168,10 @@
       <workItem from="1732072573076" duration="218000" />
       <workItem from="1732072821942" duration="1063000" />
       <workItem from="1732147467300" duration="4958000" />
+      <workItem from="1732943760592" duration="2136000" />
+      <workItem from="1732955341119" duration="1998000" />
+      <workItem from="1732979480829" duration="2737000" />
+      <workItem from="1733012698845" duration="2303000" />
     </task>
     <task id="LOCAL-00001" summary="Code Rub All code">
       <option name="closed" value="true" />
@@ -271,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732071454289</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Code rub all file">
+      <option name="closed" value="true" />
+      <created>1732944075050</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1732944075050</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +307,7 @@
     <MESSAGE value="Code rub all code" />
     <MESSAGE value="code rub" />
     <MESSAGE value="Code rub" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code rub" />
+    <MESSAGE value="Code rub all file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code rub all file" />
   </component>
 </project>

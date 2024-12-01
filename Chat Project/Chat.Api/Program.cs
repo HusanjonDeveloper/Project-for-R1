@@ -50,7 +50,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         Configuration.
         GetSection("JwtParameters").
         Get<JwtParameters>();
-    var key = System.Text.Encoding.UTF32.GetBytes(jwtParam.Key);
+    var key = System.Text.Encoding.UTF32.GetBytes(jwtParam!.Key);
     options.TokenValidationParameters = new TokenValidationParameters()
     {
         ValidIssuer = jwtParam.Issuer,
