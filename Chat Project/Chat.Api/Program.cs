@@ -109,7 +109,7 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDbContext<ChatDbContext>(options =>
 {
-    options.UseNpgsql(builder.Configuration.GetConnectionString("ChatDb"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("NewChatDb"));
 });
 
 builder.Services.AddSignalR();

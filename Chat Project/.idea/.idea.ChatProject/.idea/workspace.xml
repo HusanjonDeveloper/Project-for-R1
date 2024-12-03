@@ -12,8 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Context/ChatDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Context/ChatDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chat.Api/Migrations/ChatDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Migrations/ChatDbContextModelSnapshot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +170,7 @@
       <workItem from="1732943760592" duration="2136000" />
       <workItem from="1732955341119" duration="1998000" />
       <workItem from="1732979480829" duration="2737000" />
-      <workItem from="1733012698845" duration="2303000" />
+      <workItem from="1733012698845" duration="3801000" />
     </task>
     <task id="LOCAL-00001" summary="Code Rub All code">
       <option name="closed" value="true" />
@@ -285,7 +284,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732944075050</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="ChatIntegration">
+      <option name="closed" value="true" />
+      <created>1733017958380</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733017958380</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,6 +315,7 @@
     <MESSAGE value="code rub" />
     <MESSAGE value="Code rub" />
     <MESSAGE value="Code rub all file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code rub all file" />
+    <MESSAGE value="ChatIntegration" />
+    <option name="LAST_COMMIT_MESSAGE" value="ChatIntegration" />
   </component>
 </project>

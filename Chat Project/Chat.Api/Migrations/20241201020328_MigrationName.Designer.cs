@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Chat.Api.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -12,9 +13,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Chat.Api.Migrations
 {
     [DbContext(typeof(ChatDbContext))]
-    partial class ChatDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241201020328_MigrationName")]
+    partial class MigrationName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -146,11 +149,11 @@ namespace Chat.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d5bd98bd-a612-48dd-9f09-63fad98f3302"),
+                            Id = new Guid("4c2fa7de-cf82-4ff9-a3c6-a799c0b5d06c"),
                             FirstName = "Admin",
                             Gender = "male",
                             LastName = "Admin",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPqyDlI1L9zVSjwYZUz1/N3OnrYCssBuf0pkXBMPmd9GkCOOTZjw2nm4iGO1Ap3jYw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHxBzn1ZJ6JSh82JF5s2oGKdlDSiWvOH+xexW7DV9An+AZ2gK0eqIHRZwcWkU0sppw==",
                             Role = "admin",
                             Username = "admin"
                         });
