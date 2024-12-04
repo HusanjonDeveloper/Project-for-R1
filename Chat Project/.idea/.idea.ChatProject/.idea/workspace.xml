@@ -12,7 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="171e96cb-2475-4be8-b310-d391d65b3821" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChatProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chat.Api/Migrations/ChatDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Chat.Api/Migrations/ChatDbContextModelSnapshot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +44,9 @@
     &quot;accountId&quot;: &quot;04652239-e669-4001-b76d-ff758ba50577&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/macbook/Desktop/Projects/Project-for-R1/Chat Project/Chat.Api/Migrations/ChatDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -171,6 +173,8 @@
       <workItem from="1732955341119" duration="1998000" />
       <workItem from="1732979480829" duration="2737000" />
       <workItem from="1733012698845" duration="3801000" />
+      <workItem from="1733241570042" duration="4046000" />
+      <workItem from="1733340424872" duration="702000" />
     </task>
     <task id="LOCAL-00001" summary="Code Rub All code">
       <option name="closed" value="true" />
@@ -292,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733017958380</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="AllowAnyHeader">
+      <option name="closed" value="true" />
+      <created>1733245077560</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1733245077560</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,6 +328,7 @@
     <MESSAGE value="Code rub" />
     <MESSAGE value="Code rub all file" />
     <MESSAGE value="ChatIntegration" />
-    <option name="LAST_COMMIT_MESSAGE" value="ChatIntegration" />
+    <MESSAGE value="AllowAnyHeader" />
+    <option name="LAST_COMMIT_MESSAGE" value="AllowAnyHeader" />
   </component>
 </project>
