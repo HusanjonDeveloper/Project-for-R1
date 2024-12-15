@@ -44,5 +44,6 @@ public class CourseDbContext : DbContext
         user.PasswordHash = hashedPass;
         users.Add(user);
         modelBuilder.Entity<User>().HasData(users);
+        
     }
 }
