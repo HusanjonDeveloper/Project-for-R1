@@ -22,8 +22,8 @@ public class User
     [Compare("PasswordHash")] 
     public string? ConfirmPassword  { get; set; }
     
-    [Required]
-    public  string? Role { get; set; }
+   // [Required]
+   // public  string Role { get; set; }
 
     public  DateTime CreatedAt { get; set; }
 
